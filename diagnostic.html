@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>A.T.T.U.N.E.™ Leadership Diagnostic | Executive Advisory</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries">  
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "metallic-gold": "#F8E193", "midnight-blue": "#060A1C", "deep-navy": "#0C1434",
+          "growth-edge": "#D4AF37", "stark-white": "#FFFFFF", "subtle-gray": "#E5E7EB",
+          "on-surface-variant": "#cec6b4", "error": "#ffb4ab",
+        },
+        spacing: {
+          "stack-lg": "48px", "stack-md": "16px", "gutter": "32px",
+          "section-padding-vertical": "120px", "container-max": "1280px", "stack-sm": "8px"
+        },
+        fontFamily: {
+          "display-lg": ["Playfair Display"], "headline-sm": ["Playfair Display"],
+          "headline-md": ["Playfair Display"], "body-lg": ["Inter"],
+          "quote": ["Playfair Display"], "label-caps": ["Inter"], "body-md": ["Inter"]
+        },
+        fontSize: {
+          "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+          "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+          "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+          "quote": ["22px", {"lineHeight": "1.6", "fontWeight": "400"}],
+          "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+          "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .active-scale:active { transform: scale(0.98); }
+
+  /* Mega-menu dropdown */
+  .mega-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  }
+  .nav-dropdown:hover .mega-menu,
+  .nav-dropdown:focus-within .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .nav-dropdown > a .chevron {
+    transition: transform 0.2s ease;
+  }
+  .nav-dropdown:hover > a .chevron {
+    transform: rotate(180deg);
+  }
+
+</style>
+</head>
+<body class="bg-deep-navy text-on-surface-variant selection:bg-metallic-gold selection:text-deep-navy">
+
+<!-- Navigation -->
+<nav class="bg-deep-navy/90 backdrop-blur-md sticky top-0 z-50 border-b border-metallic-gold/20">
+  <div class="flex justify-between items-center w-full px-gutter py-5 max-w-container-max mx-auto">
+    <a href="index.html" class="flex items-center shrink-0"><img src="input assets/Attune_logo.png" alt="ATTUNE Executive Advisory" class="h-10 w-auto object-contain"/></a>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="font-label-caps text-label-caps text-stark-white/70 hover:text-metallic-gold transition-colors duration-200" href="framework.html">The Framework</a>
+      <div class="nav-dropdown relative">
+        <a href="for-teams.html" class="font-label-caps text-label-caps text-stark-white/70 hover:text-metallic-gold transition-colors duration-200 flex items-center gap-1 cursor-pointer">
+          For Teams
+          <span class="material-symbols-outlined chevron" style="font-size:14px;line-height:1;">expand_more</span>
+        </a>
+        <!-- Mega-menu panel -->
+        <div class="mega-menu absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[640px] bg-deep-navy border border-metallic-gold/20 shadow-2xl z-50">
+          <div class="grid grid-cols-2">
+            <!-- Left: Team Engagements -->
+            <div class="p-8 border-r border-metallic-gold/10">
+              <p class="font-label-caps text-[10px] text-metallic-gold/50 tracking-[0.3em] mb-6 uppercase">Team Engagements</p>
+              <div class="space-y-6">
+                <a href="intensives.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">Alignment Intensives</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">Surgical 1–2 day sessions targeting leadership friction</p>
+                </a>
+                <a href="council.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">Strategic Leadership Council</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">Confidential quarterly peer advisory forum</p>
+                </a>
+                <a href="retreats.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">Bespoke Retreats</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">Two-day executive team deep-immersion experiences</p>
+                </a>
+              </div>
+            </div>
+            <!-- Right: Start Here -->
+            <div class="p-8">
+              <p class="font-label-caps text-[10px] text-metallic-gold/50 tracking-[0.3em] mb-6 uppercase">Start Here</p>
+              <div class="space-y-6">
+                <a href="diagnostic.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">The Diagnostic</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">Download the free A.T.T.U.N.E.™ self-assessment PDF</p>
+                </a>
+                <a href="framework.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">The Framework</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">All six dimensions of leadership alignment explained</p>
+                </a>
+                <a href="case-studies.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">Case Studies</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">Real engagement outcomes and leadership shifts</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Bottom CTA bar -->
+          <div class="border-t border-metallic-gold/10 px-8 py-4 flex justify-between items-center bg-midnight-blue/60">
+            <p class="font-body-md text-[12px] text-on-surface-variant/45">Not sure which engagement fits your team?</p>
+            <a href="diagnostic.html" class="font-label-caps text-[10px] text-metallic-gold tracking-widest hover:underline flex items-center gap-1 cursor-pointer">
+              Book a Conversation
+              <span class="material-symbols-outlined" style="font-size:13px;line-height:1;">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a class="font-label-caps text-label-caps text-stark-white/70 hover:text-metallic-gold transition-colors duration-200" href="case-studies.html">Case Studies</a>
+      <a class="font-label-caps text-label-caps text-stark-white/70 hover:text-metallic-gold transition-colors duration-200" href="about.html">About</a>
+      <a href="diagnostic.html" class="bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-6 py-3 hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer">Book a Conversation</a>
+    </div>
+    <button id="mobile-menu-btn" class="md:hidden text-metallic-gold cursor-pointer" aria-label="Open menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+  <!-- Mobile dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden bg-deep-navy border-t border-metallic-gold/20 px-gutter py-6 flex flex-col gap-5">
+    <a class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold" href="framework.html">The Framework</a>
+        <div>
+      <button id="mobile-teams-btn" class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold flex items-center gap-1 w-full cursor-pointer" aria-expanded="false">
+        For Teams
+        <span class="material-symbols-outlined text-[14px] transition-transform duration-200" id="mobile-teams-chevron">expand_more</span>
+      </button>
+      <div id="mobile-teams-sub" class="hidden mt-3 pl-4 border-l border-metallic-gold/20 flex flex-col gap-3">
+        <a class="font-body-md text-[14px] text-stark-white/70 hover:text-metallic-gold" href="intensives.html">Alignment Intensives</a>
+        <a class="font-body-md text-[14px] text-stark-white/70 hover:text-metallic-gold" href="council.html">Strategic Leadership Council</a>
+        <a class="font-body-md text-[14px] text-stark-white/70 hover:text-metallic-gold" href="retreats.html">Bespoke Retreats</a>
+        <a class="font-body-md text-[14px] text-stark-white/70 hover:text-metallic-gold" href="for-teams.html">↳ Overview</a>
+      </div>
+    </div>
+    <a class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold" href="case-studies.html">Case Studies</a>
+    <a class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold" href="about.html">About</a>
+    <a href="diagnostic.html" class="bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-6 py-3 text-center">Book a Conversation</a>
+  </div>
+</nav>
+
+<main class="">
+  <!-- Hero -->
+  <section class="min-h-[870px] flex flex-col justify-center items-center text-center px-gutter relative overflow-hidden bg-deep-navy">
+    <div class="absolute inset-0 z-0 opacity-40">
+      <img alt="Boardroom" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZg-RoIpSHvel1x4eRYSjQ65dxFZ1abRcwG64Y6YOz3K5eqqwZ_DFOKiUBqdiFUuKDakca6POTpiBJs8-8A-NTyjKIAPCIFnI6-HISfCs5ne4Bfuife5ZjuGUsBaVlLShTL86qX8xp5Ooghx-IPZWx1xqLegd21aBb1nar41zxvzW-3Fi-7cDOAlIVu5aWc1b1WBFuqqGuVYXeCIVjxSL2C4wOmg-9-bV7VGWxoLwyPWKOwzZS4toZuhzBEt_RqhJ5E1OEEYKxzUIr"/>
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-deep-navy/80 via-deep-navy to-deep-navy z-10"></div>
+    <div class="relative z-20 max-w-4xl animate-fade-in">
+      <span class="font-label-caps text-label-caps text-metallic-gold uppercase tracking-widest block mb-stack-md">
+        THE A.T.T.U.N.E.™ LEADERSHIP DIAGNOSTIC
+      </span>
+      <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-stark-white mb-stack-md leading-tight">
+        Where does your leadership hold —<br class="hidden md:block"/> and where does it cost you?
+      </h1>
+      <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-stack-lg italic opacity-90">
+        Every leader has a dimension where they go on autopilot under pressure. This is how you find it.
+      </p>
+      <a class="inline-block bg-metallic-gold text-deep-navy px-10 py-4 text-label-caps font-label-caps uppercase tracking-widest font-bold hover:bg-stark-white transition-all active-scale shadow-2xl" href="#form-section">
+        Take the Diagnostic
+      </a>
+    </div>
+  </section>
+
+  <!-- What It Is -->
+  <section class="bg-stark-white text-midnight-blue py-section-padding-vertical px-gutter">
+    <div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center">
+      <div class="space-y-stack-md pr-0 md:pr-16 reveal">
+        <p class="font-body-lg text-body-lg text-midnight-blue/80 leading-relaxed">
+          The A.T.T.U.N.E.™ Leadership Diagnostic is a structured self-assessment across six dimensions of leadership behavior under pressure.
+        </p>
+        <p class="font-body-lg text-body-lg text-midnight-blue/80 leading-relaxed border-l-2 border-metallic-gold/30 pl-stack-md">
+          For each dimension, you rate yourself honestly: Strength, Developing, or Growth Edge. No performance. No right answers. Just an accurate picture of where you are.
+        </p>
+        <p class="font-body-lg text-body-lg text-midnight-blue/90 font-bold leading-relaxed">
+          The result is a clear map of where your leadership is reliable, where it is still developing, and where pressure is creating patterns that cost you — in trust, in execution, or in the relationships your work depends on.
+        </p>
+      </div>
+      <div class="relative group reveal">
+        <div class="absolute -inset-4 bg-metallic-gold/5 rounded-xl blur-2xl group-hover:bg-metallic-gold/10 transition-colors duration-500"></div>
+        <div class="relative bg-white border border-subtle-gray p-8 shadow-2xl transform rotate-1 group-hover:rotate-0 transition-transform duration-500">
+          <div class="w-full aspect-[3/4] bg-gray-50 border border-subtle-gray flex flex-col items-center justify-center p-8 gap-6">
+            <div class="font-display-lg text-4xl text-deep-navy tracking-widest">A.T.T.U.N.E.™</div>
+            <div class="w-full space-y-3">
+              <div class="h-px bg-deep-navy/10 w-full"></div>
+              <div class="flex justify-between items-center">
+                <span class="font-label-caps text-[10px] text-deep-navy/60 uppercase">AWARENESS</span>
+                <div class="flex gap-2">
+                  <span class="w-6 h-6 border border-deep-navy/20 flex items-center justify-center text-[9px] font-bold text-deep-navy/40">S</span>
+                  <span class="w-6 h-6 border border-metallic-gold/60 bg-metallic-gold/10 flex items-center justify-center text-[9px] font-bold text-growth-edge">D</span>
+                  <span class="w-6 h-6 border border-deep-navy/20 flex items-center justify-center text-[9px] font-bold text-deep-navy/40">G</span>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="font-label-caps text-[10px] text-deep-navy/60 uppercase">TRUST</span>
+                <div class="flex gap-2">
+                  <span class="w-6 h-6 border border-metallic-gold/60 bg-metallic-gold/10 flex items-center justify-center text-[9px] font-bold text-growth-edge">S</span>
+                  <span class="w-6 h-6 border border-deep-navy/20 flex items-center justify-center text-[9px] font-bold text-deep-navy/40">D</span>
+                  <span class="w-6 h-6 border border-deep-navy/20 flex items-center justify-center text-[9px] font-bold text-deep-navy/40">G</span>
+                </div>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="font-label-caps text-[10px] text-deep-navy/60 uppercase">NAMING</span>
+                <div class="flex gap-2">
+                  <span class="w-6 h-6 border border-deep-navy/20 flex items-center justify-center text-[9px] font-bold text-deep-navy/40">S</span>
+                  <span class="w-6 h-6 border border-deep-navy/20 flex items-center justify-center text-[9px] font-bold text-deep-navy/40">D</span>
+                  <span class="w-6 h-6 border border-red-300/60 bg-red-50 flex items-center justify-center text-[9px] font-bold text-red-400">G</span>
+                </div>
+              </div>
+              <div class="h-px bg-deep-navy/10 w-full"></div>
+            </div>
+            <span class="font-label-caps text-[9px] text-deep-navy/40 uppercase tracking-widest">S = Strength · D = Developing · G = Growth Edge</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What It Measures -->
+  <section class="bg-deep-navy py-section-padding-vertical px-gutter text-center overflow-hidden">
+    <div class="max-w-container-max mx-auto relative z-10 reveal">
+      <span class="font-label-caps text-label-caps text-metallic-gold uppercase tracking-widest block mb-stack-md">WHAT IT MEASURES</span>
+      <h2 class="font-headline-md text-headline-md text-stark-white mb-stack-lg max-w-2xl mx-auto">
+        Six dimensions. Each one with a direct line to how you lead, decide, and relate when stakes are highest.
+      </h2>
+      <div class="flex flex-wrap justify-center gap-4 md:gap-6 mb-stack-lg">
+        <div class="px-8 py-3 border border-metallic-gold/40 text-metallic-gold font-label-caps text-label-caps uppercase tracking-widest hover:bg-metallic-gold/10 transition-colors cursor-default">Awareness</div>
+        <div class="px-8 py-3 border border-metallic-gold/40 text-metallic-gold font-label-caps text-label-caps uppercase tracking-widest hover:bg-metallic-gold/10 transition-colors cursor-default">Tone</div>
+        <div class="px-8 py-3 border border-metallic-gold/40 text-metallic-gold font-label-caps text-label-caps uppercase tracking-widest hover:bg-metallic-gold/10 transition-colors cursor-default">Trust</div>
+        <div class="px-8 py-3 border border-metallic-gold/40 text-metallic-gold font-label-caps text-label-caps uppercase tracking-widest hover:bg-metallic-gold/10 transition-colors cursor-default">Understanding</div>
+        <div class="px-8 py-3 border border-metallic-gold/40 text-metallic-gold font-label-caps text-label-caps uppercase tracking-widest hover:bg-metallic-gold/10 transition-colors cursor-default">Naming</div>
+        <div class="px-8 py-3 border border-metallic-gold/40 text-metallic-gold font-label-caps text-label-caps uppercase tracking-widest hover:bg-metallic-gold/10 transition-colors cursor-default">Equilibrium</div>
+      </div>
+      <a class="inline-flex items-center text-on-surface-variant hover:text-metallic-gold transition-colors font-body-md text-body-md border-b border-on-surface-variant/20 pb-1" href="framework.html">
+        Learn about each dimension
+        <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+      </a>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none select-none">
+      <span class="text-[20vw] font-display-lg text-metallic-gold font-bold">ATTUNE</span>
+    </div>
+  </section>
+
+  <!-- What You Get -->
+  <section class="bg-stark-white py-section-padding-vertical px-gutter">
+    <div class="max-w-container-max mx-auto reveal">
+      <span class="font-label-caps text-label-caps text-growth-edge uppercase tracking-widest block mb-stack-md text-center">WHAT YOU GET</span>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mt-12">
+        <div class="group">
+          <div class="mb-stack-md flex items-center justify-between">
+            <span class="font-headline-sm text-headline-sm text-midnight-blue">01</span>
+            <div class="w-12 h-px bg-metallic-gold group-hover:w-full transition-all duration-700"></div>
+          </div>
+          <h3 class="font-headline-sm text-headline-sm text-midnight-blue mb-4">The full A.T.T.U.N.E.™ Framework PDF</h3>
+          <p class="font-body-md text-body-md text-midnight-blue/70">The complete framework with all six dimensions — principles, behavioral descriptions, and the diagnostic questions that reveal where your leadership holds and where it costs you.</p>
+        </div>
+        <div class="group">
+          <div class="mb-stack-md flex items-center justify-between">
+            <span class="font-headline-sm text-headline-sm text-midnight-blue">02</span>
+            <div class="w-12 h-px bg-metallic-gold group-hover:w-full transition-all duration-700"></div>
+          </div>
+          <h3 class="font-headline-sm text-headline-sm text-midnight-blue mb-4">The S/D/G self-assessment tool</h3>
+          <p class="font-body-md text-body-md text-midnight-blue/70">Rate yourself across 18 behavioral statements — Strength, Developing, or Growth Edge. Space to note your key insight or intention for each dimension.</p>
+        </div>
+        <div class="group">
+          <div class="mb-stack-md flex items-center justify-between">
+            <span class="font-headline-sm text-headline-sm text-midnight-blue">03</span>
+            <div class="w-12 h-px bg-metallic-gold group-hover:w-full transition-all duration-700"></div>
+          </div>
+          <h3 class="font-headline-sm text-headline-sm text-midnight-blue mb-4">A clear starting point</h3>
+          <p class="font-body-md text-body-md text-midnight-blue/70">The diagnostic does not tell you what to do. It tells you where to look. That is the most useful thing a diagnostic can do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Form -->
+  <section class="bg-gray-50 py-section-padding-vertical px-gutter border-y border-subtle-gray relative overflow-hidden" id="form-section">
+    <div class="max-w-2xl mx-auto relative z-10">
+      <div class="bg-stark-white p-12 md:p-16 shadow-2xl border border-subtle-gray">
+        <div id="diagnostic-form-container">
+          <span class="font-label-caps text-label-caps text-growth-edge uppercase tracking-widest block mb-4 text-center">DOWNLOAD THE DIAGNOSTIC</span>
+          <p class="text-center font-body-md text-body-md text-midnight-blue/60 mb-10">Free. No commitment.</p>
+          <form class="space-y-6" id="diagnostic-form">
+            <div>
+              <label class="font-label-caps text-xs uppercase tracking-widest text-midnight-blue/50 mb-2 block">First Name <span class="text-red-400">*</span></label>
+              <input class="w-full border-b border-subtle-gray focus:border-metallic-gold focus:ring-0 px-0 py-3 bg-transparent font-body-md transition-all outline-none text-midnight-blue" placeholder="Alexander" required type="text"/>
+            </div>
+            <div>
+              <label class="font-label-caps text-xs uppercase tracking-widest text-midnight-blue/50 mb-2 block">Work Email <span class="text-red-400">*</span></label>
+              <input class="w-full border-b border-subtle-gray focus:border-metallic-gold focus:ring-0 px-0 py-3 bg-transparent font-body-md transition-all outline-none text-midnight-blue" placeholder="alexander.v@firm.com" required type="email"/>
+            </div>
+            <div>
+              <label class="font-label-caps text-xs uppercase tracking-widest text-midnight-blue/50 mb-2 block">Role / Title</label>
+              <input class="w-full border-b border-subtle-gray focus:border-metallic-gold focus:ring-0 px-0 py-3 bg-transparent font-body-md transition-all outline-none text-midnight-blue" placeholder="Managing Director" type="text"/>
+            </div>
+            <div class="pt-6">
+              <button class="w-full bg-deep-navy text-stark-white py-5 font-label-caps text-label-caps uppercase tracking-widest font-bold hover:bg-midnight-blue hover:text-metallic-gold transition-all active-scale" type="submit">
+                Send me the Diagnostic
+              </button>
+              <p class="text-center mt-6 text-[10px] text-midnight-blue/40 font-label-caps uppercase tracking-widest">
+                Used only to send you the diagnostic. No sequences, no sales emails.
+              </p>
+            </div>
+          </form>
+        </div>
+        <!-- Thank You State -->
+        <div class="hidden text-center animate-fade-in py-10" id="thank-you-state">
+          <div class="w-16 bg-metallic-gold/20 rounded-full flex items-center justify-center mx-auto mb-8">
+            <span class="material-symbols-outlined text-metallic-gold text-3xl">check_circle</span>
+          </div>
+          <h2 class="font-headline-md text-headline-md text-midnight-blue mb-4">Your diagnostic is on its way.</h2>
+          <p class="font-body-md text-body-md text-midnight-blue/70 mb-10">Check your inbox — the PDF will arrive within a few minutes.</p>
+          <div class="bg-deep-navy/5 p-8 border border-deep-navy/10">
+            <p class="font-body-md text-body-md text-midnight-blue mb-6">
+              The diagnostic works best when it starts a conversation. If you would like to discuss what you find — book a 30-minute call with Claudia.
+            </p>
+            <a href="about.html" class="inline-block bg-deep-navy text-stark-white px-8 py-4 text-label-caps font-label-caps uppercase tracking-widest font-bold hover:text-metallic-gold transition-colors active-scale">
+              Book a 30-Minute Debrief
+            </a>
+            <p class="mt-4 text-[11px] text-midnight-blue/50 font-label-caps uppercase tracking-widest">No obligation. A diagnostic conversation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credibility -->
+  <section class="bg-subtle-gray py-section-padding-vertical px-gutter">
+    <div class="max-w-4xl mx-auto text-center reveal">
+      <span class="material-symbols-outlined text-metallic-gold text-4xl mb-8 block" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+      <blockquote class="font-quote text-quote text-midnight-blue mb-stack-md leading-relaxed">
+        "She had an ability to ask the exact question that needed to be asked — often the one just beneath the surface — and helped me build habits and leadership practices that have stayed with me years later."
+      </blockquote>
+      <cite class="not-italic block mb-12">
+        <span class="font-label-caps text-label-caps text-midnight-blue/60 uppercase tracking-widest">— Daniel Kendzior, Managing Director, Accenture</span>
+      </cite>
+      <div class="pt-12 border-t border-midnight-blue/10 flex flex-col items-center">
+        <p class="font-body-lg text-body-lg text-midnight-blue mb-6">
+          <strong class="font-bold">Claudia Beck, MCC</strong> — ICF Master Certified Coach. 6,000+ executive sessions. Ex Burberry, Gap Inc., Tory Burch, PwC. Founder of the A.T.T.U.N.E.™ Leadership Framework.
+        </p>
+        <a class="font-label-caps text-label-caps text-growth-edge uppercase tracking-widest flex items-center hover:opacity-70 transition-opacity" href="about.html">
+          About Claudia <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-midnight-blue border-t border-metallic-gold/10 py-12 px-gutter">
+  <div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <p class="font-body-md text-body-md text-on-surface-variant opacity-60">
+      © 2026 A.T.T.U.N.E.™ Leadership Advisory. All rights reserved.
+    </p>
+    <div class="flex gap-8">
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors font-body-md" href="framework.html">The Framework</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors font-body-md" href="about.html">About</a>
+      <a class="text-on-surface-variant hover:text-metallic-gold transition-colors font-body-md" href="#">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Form submission
+  document.getElementById('diagnostic-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const container = document.getElementById('diagnostic-form-container');
+    const thanks = document.getElementById('thank-you-state');
+    container.style.opacity = '0';
+    container.style.transition = 'opacity 0.3s';
+    setTimeout(() => {
+      container.classList.add('hidden');
+      thanks.classList.remove('hidden');
+      thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 300);
+  });
+
+  // Scroll reveal
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Mobile menu & For Teams accordion
+  document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+  });
+  var teamsBtn = document.getElementById('mobile-teams-btn');
+  if (teamsBtn) {
+    teamsBtn.addEventListener('click', () => {
+      var sub = document.getElementById('mobile-teams-sub');
+      var chev = document.getElementById('mobile-teams-chevron');
+      sub.classList.toggle('hidden');
+      chev.style.transform = sub.classList.contains('hidden') ? '' : 'rotate(180deg)';
+    });
+  }
+</script>
+</body>
+</html>

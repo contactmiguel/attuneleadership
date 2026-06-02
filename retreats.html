@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Bespoke Retreats | ATTUNE Leadership</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "metallic-gold": "#F8E193", "midnight-blue": "#060A1C", "deep-navy": "#0C1434",
+          "growth-edge": "#D4AF37", "stark-white": "#FFFFFF", "subtle-gray": "#E5E7EB",
+          "on-surface-variant": "#cec6b4",
+        },
+        spacing: {
+          "stack-lg": "48px", "stack-md": "16px", "gutter": "32px",
+          "section-padding-vertical": "120px", "container-max": "1280px", "stack-sm": "8px"
+        },
+        fontFamily: {
+          "display-lg": ["Playfair Display"], "headline-sm": ["Playfair Display"],
+          "headline-md": ["Playfair Display"], "body-lg": ["Inter"],
+          "quote": ["Playfair Display"], "label-caps": ["Inter"], "body-md": ["Inter"]
+        },
+        fontSize: {
+          "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+          "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+          "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+          "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+          "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+          "quote": ["22px", {"lineHeight": "1.6", "fontWeight": "400"}],
+          "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+          "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .gold-line-drawing { stroke: #F8E193; stroke-width: 1; fill: none; }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* Mega-menu dropdown */
+  .mega-menu {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+  }
+  .nav-dropdown:hover .mega-menu,
+  .nav-dropdown:focus-within .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .nav-dropdown > a .chevron {
+    transition: transform 0.2s ease;
+  }
+  .nav-dropdown:hover > a .chevron {
+    transform: rotate(180deg);
+  }
+
+</style>
+</head>
+<body class="bg-deep-navy text-on-surface-variant font-body-md antialiased selection:bg-metallic-gold selection:text-deep-navy">
+
+<!-- Navigation -->
+<nav class="bg-deep-navy/90 backdrop-blur-md sticky top-0 z-50 border-b border-metallic-gold/20">
+  <div class="flex justify-between items-center w-full px-gutter py-5 max-w-container-max mx-auto">
+    <a href="index.html" class="flex items-center shrink-0"><img src="input assets/Attune_logo.png" alt="ATTUNE Executive Advisory" class="h-10 w-auto object-contain"/></a>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="font-label-caps text-label-caps text-stark-white/70 hover:text-metallic-gold transition-colors duration-200" href="framework.html">The Framework</a>
+      <div class="nav-dropdown relative">
+        <a href="for-teams.html" class="font-label-caps text-label-caps text-metallic-gold border-b border-metallic-gold/60 pb-0.5 transition-colors duration-200 flex items-center gap-1 cursor-pointer">
+          For Teams
+          <span class="material-symbols-outlined chevron" style="font-size:14px;line-height:1;">expand_more</span>
+        </a>
+        <!-- Mega-menu panel -->
+        <div class="mega-menu absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[640px] bg-deep-navy border border-metallic-gold/20 shadow-2xl z-50">
+          <div class="grid grid-cols-2">
+            <!-- Left: Team Engagements -->
+            <div class="p-8 border-r border-metallic-gold/10">
+              <p class="font-label-caps text-[10px] text-metallic-gold/50 tracking-[0.3em] mb-6 uppercase">Team Engagements</p>
+              <div class="space-y-6">
+                <a href="intensives.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">Alignment Intensives</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">Surgical 1–2 day sessions targeting leadership friction</p>
+                </a>
+                <a href="council.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">Strategic Leadership Council</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">Confidential quarterly peer advisory forum</p>
+                </a>
+                <a href="retreats.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">Bespoke Retreats</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">Two-day executive team deep-immersion experiences</p>
+                </a>
+              </div>
+            </div>
+            <!-- Right: Start Here -->
+            <div class="p-8">
+              <p class="font-label-caps text-[10px] text-metallic-gold/50 tracking-[0.3em] mb-6 uppercase">Start Here</p>
+              <div class="space-y-6">
+                <a href="diagnostic.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">The Diagnostic</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">Download the free A.T.T.U.N.E.™ self-assessment PDF</p>
+                </a>
+                <a href="framework.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">The Framework</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">All six dimensions of leadership alignment explained</p>
+                </a>
+                <a href="case-studies.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">Case Studies</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">Real engagement outcomes and leadership shifts</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- Bottom CTA bar -->
+          <div class="border-t border-metallic-gold/10 px-8 py-4 flex justify-between items-center bg-midnight-blue/60">
+            <p class="font-body-md text-[12px] text-on-surface-variant/45">Not sure which engagement fits your team?</p>
+            <a href="diagnostic.html" class="font-label-caps text-[10px] text-metallic-gold tracking-widest hover:underline flex items-center gap-1 cursor-pointer">
+              Book a Conversation
+              <span class="material-symbols-outlined" style="font-size:13px;line-height:1;">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a class="font-label-caps text-label-caps text-stark-white/70 hover:text-metallic-gold transition-colors duration-200" href="case-studies.html">Case Studies</a>
+      <a class="font-label-caps text-label-caps text-stark-white/70 hover:text-metallic-gold transition-colors duration-200" href="about.html">About</a>
+      <a href="diagnostic.html" class="bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-6 py-3 hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer">Book a Conversation</a>
+    </div>
+    <button id="mobile-menu-btn" class="md:hidden text-metallic-gold cursor-pointer" aria-label="Open menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+  <!-- Mobile dropdown -->
+  <div id="mobile-menu" class="hidden md:hidden bg-deep-navy border-t border-metallic-gold/20 px-gutter py-6 flex flex-col gap-5">
+    <a class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold" href="framework.html">The Framework</a>
+        <div>
+      <button id="mobile-teams-btn" class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold flex items-center gap-1 w-full cursor-pointer" aria-expanded="false">
+        For Teams
+        <span class="material-symbols-outlined text-[14px] transition-transform duration-200" id="mobile-teams-chevron">expand_more</span>
+      </button>
+      <div id="mobile-teams-sub" class="hidden mt-3 pl-4 border-l border-metallic-gold/20 flex flex-col gap-3">
+        <a class="font-body-md text-[14px] text-stark-white/70 hover:text-metallic-gold" href="intensives.html">Alignment Intensives</a>
+        <a class="font-body-md text-[14px] text-stark-white/70 hover:text-metallic-gold" href="council.html">Strategic Leadership Council</a>
+        <a class="font-body-md text-[14px] text-stark-white/70 hover:text-metallic-gold" href="retreats.html">Bespoke Retreats</a>
+        <a class="font-body-md text-[14px] text-stark-white/70 hover:text-metallic-gold" href="for-teams.html">↳ Overview</a>
+      </div>
+    </div>
+    <a class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold" href="case-studies.html">Case Studies</a>
+    <a class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold" href="about.html">About</a>
+    <a href="diagnostic.html" class="bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-6 py-3 text-center">Book a Conversation</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<header class="relative h-[85vh] w-full overflow-hidden">
+  <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqxpj7Pa-m_8S13oWnCIAr-TEEOHPbLb9_snbGE1jy9bRUyZSWfYhS0yGXQ7J6lI8hVrVbmycIxlyBMz6cxdlAKRlkRb3brJ7hqfN5AKxUQqlWEdnMD9mf1H_HEdN8yAXBPL5DMsaxT8Ers9bvFjJNkkHkHeMZYEXqT5QhhZ0uwtNT_BgmwVEWYMw1la1yACQPQtyWEDfigb16XX47mKMlwnwwRIHRDeMEyWukVsc6d7ebWXfnpmCIu-1nv573jpbniYsr7Xl5hhfJ')">
+    <div class="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent"></div>
+  </div>
+  <div class="relative h-full max-w-container-max mx-auto px-gutter flex flex-col justify-end pb-24">
+    <div class="max-w-3xl">
+      <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-stark-white mb-6">
+        Two days that change how a leadership team operates for the next two years.
+      </h1>
+      <div class="w-24 h-1 bg-metallic-gold"></div>
+    </div>
+  </div>
+</header>
+
+<!-- What It Is -->
+<section class="bg-stark-white py-section-padding-vertical text-deep-navy">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+      <div class="md:col-span-8 md:col-start-3 text-center reveal">
+        <span class="font-label-caps text-label-caps text-growth-edge block mb-8">THE DEFINITION</span>
+        <div class="border-t border-metallic-gold py-12 mb-12">
+          <blockquote class="font-quote text-quote italic text-deep-navy leading-relaxed">
+            "A Bespoke Retreat is not a planning session. It is not a team-building event. It is a structured behavioral working retreat."
+          </blockquote>
+        </div>
+        <div class="border-b border-metallic-gold mb-12"></div>
+        <p class="font-body-lg text-body-lg text-deep-navy/70 max-w-2xl mx-auto">
+          In the room, we bypass the tactical noise to address the underlying dynamics that either accelerate or sabotage strategic execution. We facilitate the high-consequence conversations most teams are avoiding.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The Foundation -->
+<section class="bg-deep-navy py-section-padding-vertical">
+  <div class="max-w-container-max mx-auto px-gutter">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+      <div class="space-y-12 reveal">
+        <h2 class="font-headline-md text-headline-md text-metallic-gold">Built on The Five Behaviors</h2>
+        <p class="font-body-md text-on-surface-variant">Our retreats integrate Patrick Lencioni's Five Behaviors model — the gold standard for high-performing teams — with the ATTUNE Framework's relational diagnostics.</p>
+        <div class="relative aspect-square flex items-center justify-center max-w-sm">
+          <svg class="w-full gold-line-drawing" viewBox="0 0 400 400">
+            <path d="M200 40 L360 360 L40 360 Z"/>
+            <line x1="80" x2="320" y1="280" y2="280"/>
+            <line x1="120" x2="280" y1="200" y2="200"/>
+            <line x1="160" x2="240" y1="120" y2="120"/>
+            <line x1="60" x2="340" y1="320" y2="320"/>
+            <text class="fill-metallic-gold" font-family="Inter" font-size="11" text-anchor="middle" x="200" y="95">RESULTS</text>
+            <text class="fill-metallic-gold" font-family="Inter" font-size="11" text-anchor="middle" x="200" y="170">ACCOUNTABILITY</text>
+            <text class="fill-metallic-gold" font-family="Inter" font-size="11" text-anchor="middle" x="200" y="245">COMMITMENT</text>
+            <text class="fill-metallic-gold" font-family="Inter" font-size="11" text-anchor="middle" x="200" y="305">CONFLICT</text>
+            <text class="fill-metallic-gold" font-family="Inter" font-size="11" text-anchor="middle" x="200" y="345">TRUST</text>
+          </svg>
+        </div>
+      </div>
+      <div class="reveal">
+        <h2 class="font-headline-md text-headline-md text-stark-white mb-8">What changes in two days</h2>
+        <div class="space-y-8">
+          <div class="flex gap-4">
+            <div class="w-8 h-px bg-metallic-gold mt-3 shrink-0"></div>
+            <div>
+              <h4 class="font-headline-sm text-headline-sm text-metallic-gold mb-2">Trust Architecture</h4>
+              <p class="font-body-md text-on-surface-variant">Move from surface-level collegiality to the kind of trust that allows for genuine strategic dissent.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-8 h-px bg-metallic-gold mt-3 shrink-0"></div>
+            <div>
+              <h4 class="font-headline-sm text-headline-sm text-metallic-gold mb-2">Conflict Resolution Norms</h4>
+              <p class="font-body-md text-on-surface-variant">Establish shared protocols for productive disagreement that accelerate, rather than stall, decisions.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-8 h-px bg-metallic-gold mt-3 shrink-0"></div>
+            <div>
+              <h4 class="font-headline-sm text-headline-sm text-metallic-gold mb-2">Shared Accountability Language</h4>
+              <p class="font-body-md text-on-surface-variant">A common vocabulary for naming what is and isn't working — without the weight of hierarchy distorting the message.</p>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <div class="w-8 h-px bg-metallic-gold mt-3 shrink-0"></div>
+            <div>
+              <h4 class="font-headline-sm text-headline-sm text-metallic-gold mb-2">Team Results Orientation</h4>
+              <p class="font-body-md text-on-surface-variant">Align personal incentives with collective outcomes so "we" replaces "my function" in every key decision.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Who It's For -->
+<section class="py-section-padding-vertical bg-slate-100 text-midnight-blue">
+  <div class="max-w-container-max mx-auto px-gutter reveal">
+    <div class="text-center mb-16">
+      <h2 class="font-display-lg text-headline-md">Who This Is For</h2>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      <div class="p-8 border border-midnight-blue/10 bg-white hover:border-metallic-gold/40 transition-all">
+        <h4 class="font-headline-sm text-headline-sm mb-4 text-deep-navy">Teams at a Strategic Inflection Point</h4>
+        <p class="font-body-md text-slate-600">Post-Series C, pre-IPO, post-acquisition, or entering a new market phase. The old operating model no longer fits.</p>
+      </div>
+      <div class="p-8 border border-midnight-blue/10 bg-white hover:border-metallic-gold/40 transition-all">
+        <h4 class="font-headline-sm text-headline-sm mb-4 text-deep-navy">C-Suites with Accumulated Friction</h4>
+        <p class="font-body-md text-slate-600">Teams that function well on paper but feel the weight of unsaid things slowing every decision.</p>
+      </div>
+      <div class="p-8 border border-midnight-blue/10 bg-white hover:border-metallic-gold/40 transition-all">
+        <h4 class="font-headline-sm text-headline-sm mb-4 text-deep-navy">New Leadership Teams</h4>
+        <p class="font-body-md text-slate-600">Newly formed executive teams that need to build trust quickly and establish operating norms before pressure arrives.</p>
+      </div>
+      <div class="p-8 border border-midnight-blue/10 bg-white hover:border-metallic-gold/40 transition-all">
+        <h4 class="font-headline-sm text-headline-sm mb-4 text-deep-navy">Leaders Who Value Discretion</h4>
+        <p class="font-body-md text-slate-600">All retreats are conducted under strict confidentiality. What happens in the room stays in the room.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-section-padding-vertical bg-midnight-blue text-center">
+  <div class="max-w-2xl mx-auto px-gutter reveal">
+    <h2 class="font-display-lg text-headline-md text-stark-white mb-8">Ready to reset the room?</h2>
+    <p class="font-body-lg text-on-surface-variant mb-12">Every retreat begins with a confidential conversation about what your team needs and what you're navigating.</p>
+    <a href="diagnostic.html" class="bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-12 py-5 font-bold uppercase hover:bg-stark-white transition-all shadow-xl inline-block">Begin the Conversation</a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-midnight-blue border-t border-metallic-gold/10">
+  <div class="flex flex-col md:flex-row justify-between items-start px-gutter py-section-padding-vertical max-w-container-max mx-auto gap-stack-lg">
+    <div>
+      <a href="index.html" class="font-display-lg text-display-lg text-metallic-gold uppercase block mb-stack-md">ATTUNE</a>
+      <p class="font-body-md text-subtle-gray max-w-xs">© 2026 ATTUNE Advisory. All rights reserved.</p>
+    </div>
+    <div class="grid grid-cols-2 gap-stack-lg">
+      <div class="flex flex-col gap-stack-md">
+        <a class="font-body-md text-subtle-gray hover:text-metallic-gold underline transition-all" href="framework.html">The Framework</a>
+        <a class="font-body-md text-subtle-gray hover:text-metallic-gold underline transition-all" href="for-teams.html">For Teams</a>
+        <a class="font-body-md text-subtle-gray hover:text-metallic-gold underline transition-all" href="intensives.html">Alignment Intensives</a>
+      </div>
+      <div class="flex flex-col gap-stack-md">
+        <a class="font-body-md text-subtle-gray hover:text-metallic-gold underline transition-all" href="about.html">About</a>
+        <a class="font-body-md text-subtle-gray hover:text-metallic-gold underline transition-all" href="diagnostic.html">The Diagnostic</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // Mobile menu & For Teams accordion
+  document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.toggle('hidden');
+  });
+  var teamsBtn = document.getElementById('mobile-teams-btn');
+  if (teamsBtn) {
+    teamsBtn.addEventListener('click', () => {
+      var sub = document.getElementById('mobile-teams-sub');
+      var chev = document.getElementById('mobile-teams-chevron');
+      sub.classList.toggle('hidden');
+      chev.style.transform = sub.classList.contains('hidden') ? '' : 'rotate(180deg)';
+    });
+  }
+</script>
+</body>
+</html>
