@@ -172,6 +172,10 @@
             <div class="p-8">
               <p class="font-label-caps text-[10px] text-metallic-gold/50 tracking-[0.3em] mb-6 uppercase">Start Here</p>
               <div class="space-y-6">
+                <a href="assessment.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-metallic-gold group-hover/item:text-metallic-gold transition-colors duration-150">The Assessment<span class="ml-2 text-xs font-normal text-metallic-gold/70 uppercase tracking-wider">3 min</span></p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">15 questions to identify where alignment breaks down</p>
+                </a>
                 <a href="diagnostic.html" class="block group/item cursor-pointer">
                   <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">The Diagnostic</p>
                   <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">Download the free A.T.T.U.N.E.™ self-assessment PDF</p>
@@ -198,6 +202,7 @@
       </div>
       <a class="font-label-caps text-label-caps text-stark-white/70 hover:text-metallic-gold transition-colors duration-200" href="case-studies.html">Case Studies</a>
       <a class="font-label-caps text-label-caps text-stark-white/70 hover:text-metallic-gold transition-colors duration-200" href="about.html">About</a>
+      <a href="assessment.html" class="text-sm font-medium text-stark-white border border-stark-white/30 px-4 py-2 hover:border-metallic-gold hover:text-metallic-gold transition-all duration-300 tracking-wide uppercase mr-3">Self-Assessment</a>
       <a href="diagnostic.html" class="btn-gold bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-6 py-3 hover:opacity-90 transition-all duration-300 active:scale-95 cursor-pointer">Book a Conversation</a>
     </div>
     <button id="mobile-menu-btn" class="md:hidden text-metallic-gold cursor-pointer" aria-label="Open menu">
@@ -212,6 +217,7 @@
         <span class="material-symbols-outlined text-[14px] transition-transform duration-200" id="mobile-teams-chevron">expand_more</span>
       </button>
       <div id="mobile-teams-sub" class="hidden mt-3 pl-4 border-l border-metallic-gold/20 flex flex-col gap-3">
+        <a class="font-body-md text-[14px] text-stark-white/70 hover:text-metallic-gold" href="assessment.html">Self-Assessment</a>
         <a class="font-body-md text-[14px] text-stark-white/70 hover:text-metallic-gold" href="intensives.html">Alignment Intensives</a>
         <a class="font-body-md text-[14px] text-stark-white/70 hover:text-metallic-gold" href="council.html">Strategic Leadership Council</a>
         <a class="font-body-md text-[14px] text-stark-white/70 hover:text-metallic-gold" href="retreats.html">Bespoke Retreats</a>
@@ -220,6 +226,7 @@
     </div>
     <a class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold" href="case-studies.html">Case Studies</a>
     <a class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold" href="about.html">About</a>
+    <a href="assessment.html" class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold">Self-Assessment</a>
     <a href="diagnostic.html" class="bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-6 py-3 text-center">Book a Conversation</a>
   </div>
 </nav>
@@ -242,8 +249,11 @@
       </p>
       <div class="reveal reveal-delay-3 flex flex-col sm:flex-row gap-4">
         <a href="diagnostic.html" class="btn-gold bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-10 py-4 hover:opacity-90 transition-all active:scale-95 text-center cursor-pointer tracking-widest">Download The Framework</a>
-        <a href="framework.html" class="border border-metallic-gold/50 text-metallic-gold font-label-caps text-label-caps px-10 py-4 hover:bg-metallic-gold/10 transition-all text-center tracking-widest">Our Method</a>
+        <a href="assessment.html" class="border border-metallic-gold/50 text-metallic-gold font-label-caps text-label-caps px-10 py-4 hover:bg-metallic-gold/10 transition-all text-center tracking-widest">Take the Self-Assessment</a>
       </div>
+      <p class="text-sm text-on-surface-variant mt-4">
+        Or <a href="framework.html" class="underline hover:text-metallic-gold transition-colors">explore the A.T.T.U.N.E. framework →</a>
+      </p>
     </div>
   </div>
   <!-- Vertical scroll hint -->
@@ -428,11 +438,15 @@
     </div>
 
     <!-- Download link -->
-    <div class="mt-10 text-center reveal">
+    <div class="mt-10 text-center reveal flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="diagnostic.html" class="inline-flex items-center gap-3 font-label-caps text-label-caps text-metallic-gold/50 hover:text-metallic-gold transition-colors cursor-pointer group">
         <span class="w-8 h-px bg-metallic-gold/30 group-hover:w-12 transition-all duration-300"></span>
         Download the full framework PDF
         <span class="w-8 h-px bg-metallic-gold/30 group-hover:w-12 transition-all duration-300"></span>
+      </a>
+      <span class="text-on-surface-variant text-sm hidden sm:inline">or</span>
+      <a href="assessment.html" class="text-sm font-medium text-metallic-gold hover:text-stark-white transition-colors duration-200 tracking-wide">
+        See how your team scores across all six dimensions →
       </a>
     </div>
   </div>
@@ -484,6 +498,15 @@
         <p class="font-label-caps text-[10px] text-metallic-gold tracking-widest">PRECISION IN LEADERSHIP</p>
       </div>
     </div>
+  </div>
+  <div class="text-center mt-12 reveal">
+    <p class="text-on-surface-variant text-sm uppercase tracking-widest mb-3">Not sure which describes your team?</p>
+    <p class="text-stark-white text-lg font-display-lg mb-6 max-w-xl mx-auto">
+      The self-assessment identifies your specific alignment gap in under three minutes.
+    </p>
+    <a href="assessment.html" class="inline-block text-sm font-medium text-metallic-gold border border-metallic-gold/50 px-6 py-3 hover:bg-metallic-gold hover:text-deep-navy transition-all duration-300 tracking-widest uppercase">
+      Diagnose Your Gap
+    </a>
   </div>
 </section>
 
@@ -711,6 +734,7 @@
         <li><a class="font-body-md text-[15px] text-on-surface-variant/60 hover:text-stark-white transition-colors" href="framework.html">Framework</a></li>
         <li><a class="font-body-md text-[15px] text-on-surface-variant/60 hover:text-stark-white transition-colors" href="for-teams.html">Team Programs</a></li>
         <li><a class="font-body-md text-[15px] text-on-surface-variant/60 hover:text-stark-white transition-colors" href="case-studies.html">Case Studies</a></li>
+        <li><a class="font-body-md text-[15px] text-on-surface-variant/60 hover:text-stark-white transition-colors" href="assessment.html">Self-Assessment</a></li>
         <li><a class="font-body-md text-[15px] text-on-surface-variant/60 hover:text-stark-white transition-colors" href="about.html">About</a></li>
       </ul>
     </div>

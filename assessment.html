@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leadership Alignment Self-Assessment — ATTUNE</title>
+  <meta name="description" content="Answer 15 questions to identify exactly where your leadership team's alignment breaks down. Immediate results mapped to the A.T.T.U.N.E. framework. Takes 3 minutes." />
+  <meta property="og:title" content="Leadership Alignment Self-Assessment — ATTUNE" />
+  <meta property="og:description" content="Find exactly where your team's alignment costs you — before it costs you the room. 15 questions, 3 minutes, immediate results." />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Inter:wght@300;400;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "metallic-gold": "#F8E193",
+            "midnight-blue": "#060A1C",
+            "deep-navy": "#0C1434",
+            "growth-edge": "#D4AF37",
+            "stark-white": "#FFFFFF",
+            "subtle-gray": "#E5E7EB",
+            "on-surface-variant": "#cec6b4",
+            "cream": "#F8F7F4",
+          },
+          spacing: {
+            "stack-lg": "48px", "stack-md": "16px", "gutter": "32px",
+            "section-padding-vertical": "120px", "container-max": "1280px", "stack-sm": "8px"
+          },
+          fontFamily: {
+            "display-lg": ["Playfair Display"], "headline-sm": ["Playfair Display"],
+            "headline-md": ["Playfair Display"], "body-lg": ["Inter"],
+            "quote": ["Playfair Display"], "label-caps": ["Inter"], "body-md": ["Inter"]
+          },
+          fontSize: {
+            "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "display-lg-mobile": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "headline-sm": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+            "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
+            "body-lg": ["18px", {"lineHeight": "1.7", "fontWeight": "400"}],
+            "quote": ["22px", {"lineHeight": "1.6", "fontWeight": "400"}],
+            "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+            "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg:        #0C1434;
+      --bg2:       #0F1115;
+      --bg3:       #141720;
+      --border:    rgba(255,255,255,0.07);
+      --gold:      #F8E193;
+      --gold-lt:   #F8E193;
+      --text:      #FFFFFF;
+      --text-muted:#cec6b4;
+      --white:     #ffffff;
+      --red:       #c0392b;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 3rem;
+      background: rgba(10,11,13,0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: .35em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-back {
+      font-size: .7rem;
+      letter-spacing: .15em;
+      color: var(--text-muted);
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-back:hover { color: var(--gold); }
+
+    /* ── HERO / LANDING ── */
+    #landing { display: block; }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 10rem 2rem 6rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 20%, rgba(201,168,76,0.07) 0%, transparent 70%),
+        radial-gradient(ellipse 80% 60% at 30% 80%, rgba(201,168,76,0.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      font-size: .65rem;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2.2rem;
+      opacity: 0;
+      animation: fadeUp .8s .2s forwards;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 300;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      line-height: 1.1;
+      color: var(--white);
+      max-width: 820px;
+      margin: 0 auto 1.8rem;
+      opacity: 0;
+      animation: fadeUp .9s .35s forwards;
+    }
+    .hero h1 em { font-style: italic; color: var(--gold-lt); }
+
+    .hero-sub {
+      font-size: .9rem;
+      letter-spacing: .04em;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto 3.5rem;
+      opacity: 0;
+      animation: fadeUp .9s .5s forwards;
+    }
+
+    .hero-cta {
+      opacity: 0;
+      animation: fadeUp .9s .65s forwards;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: .95rem 2.8rem;
+      background: var(--gold);
+      color: #0a0b0d;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: .72rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background .2s, transform .15s;
+    }
+    .btn-primary:hover { background: var(--gold-lt); transform: translateY(-2px); }
+
+    .btn-ghost {
+      display: inline-block;
+      padding: .85rem 2rem;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: .7rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      background: transparent;
+      transition: border-color .2s, color .2s;
+      margin-left: 1.2rem;
+    }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+    .hero-meta {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+      margin-top: 4rem;
+      opacity: 0;
+      animation: fadeUp .9s .8s forwards;
+    }
+    .hero-meta-item {
+      font-size: .65rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .hero-meta-item::before {
+      content: '—';
+      color: var(--gold);
+      font-size: .6rem;
+    }
+
+    /* ── SECTION SHARED ── */
+    section {
+      padding: 6rem 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: .6rem;
+      letter-spacing: .35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── VALUE PROP ── */
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin-top: 3rem;
+    }
+    .value-card {
+      background: var(--bg2);
+      padding: 2.5rem 2rem;
+    }
+    .value-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: var(--gold);
+      opacity: .4;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .value-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: 1.35rem;
+      color: var(--white);
+      margin-bottom: .6rem;
+    }
+    .value-card p {
+      font-size: .78rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── CREDIBILITY ── */
+    .cred-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .cred-bio h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .cred-bio h2 em { font-style: italic; color: var(--gold-lt); }
+    .cred-bio p {
+      font-size: .82rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      margin-bottom: 2rem;
+    }
+    .stat-box {
+      background: var(--bg2);
+      padding: 1.5rem;
+    }
+    .stat-box .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: var(--gold);
+      font-weight: 300;
+    }
+    .stat-box .label {
+      font-size: .65rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: .2rem;
+    }
+
+    .research-points { list-style: none; }
+    .research-points li {
+      font-size: .78rem;
+      color: var(--text-muted);
+      padding: .7rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .research-points li::before {
+      content: '→';
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: .05rem;
+    }
+
+    /* ── CTA SECTION ── */
+    .cta-section {
+      text-align: center;
+      padding: 6rem 2rem;
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      color: var(--white);
+      margin-bottom: 1rem;
+      line-height: 1.15;
+    }
+    .cta-section h2 em { font-style: italic; color: var(--gold-lt); }
+    .cta-section p {
+      font-size: .85rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-badges {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .badge {
+      font-size: .65rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+    .badge .dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    /* ── QUIZ SHELL ── */
+    #quiz { display: none; }
+
+    .quiz-wrap {
+      min-height: 100vh;
+      padding: 7rem 1.5rem 4rem;
+      max-width: 740px;
+      margin: 0 auto;
+    }
+
+    .quiz-progress-bar-outer {
+      height: 2px;
+      background: var(--border);
+      margin-bottom: 3rem;
+      position: relative;
+    }
+    .quiz-progress-bar-inner {
+      height: 100%;
+      background: var(--gold);
+      transition: width .4s ease;
+    }
+    .quiz-step-label {
+      font-size: .6rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: .5rem;
+    }
+
+    /* Contact step */
+    .contact-step h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 300;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      color: var(--white);
+      margin-bottom: .8rem;
+      line-height: 1.2;
+    }
+    .contact-step p {
+      font-size: .82rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+    }
+    .form-group { margin-bottom: 1.4rem; }
+    .form-group label {
+      display: block;
+      font-size: .65rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: .5rem;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: .85rem;
+      padding: .85rem 1.1rem;
+      outline: none;
+      transition: border-color .2s;
+    }
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: var(--gold);
+    }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .optional-tag {
+      font-size: .6rem;
+      color: var(--text-muted);
+      margin-left: .4rem;
+    }
+
+    /* Question step */
+    .question-step { display: none; }
+    .question-step.active { display: block; }
+
+    .question-head {
+      font-family: 'Playfair Display', serif;
+      font-weight: 300;
+      font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+      color: var(--white);
+      line-height: 1.25;
+      margin-bottom: 2.2rem;
+    }
+
+    /* Rating row (yes/no style for best practices) */
+    .rating-row {
+      display: flex;
+      gap: 1px;
+      background: var(--border);
+    }
+    .rating-opt {
+      flex: 1;
+      padding: 1.1rem;
+      background: var(--bg2);
+      text-align: center;
+      cursor: pointer;
+      font-size: .7rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      transition: background .18s, color .18s;
+      border: none;
+      font-family: 'Inter', sans-serif;
+    }
+    .rating-opt:hover, .rating-opt.selected {
+      background: var(--gold);
+      color: #0a0b0d;
+    }
+
+    /* Multiple choice */
+    .mc-list { display: flex; flex-direction: column; gap: .7rem; }
+    .mc-opt {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.3rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      font-size: .82rem;
+      color: var(--text-muted);
+      transition: border-color .18s, color .18s, background .18s;
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+    }
+    .mc-opt:hover { border-color: var(--gold); color: var(--text); }
+    .mc-opt.selected {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.08);
+      color: var(--gold);
+    }
+    .mc-marker {
+      width: 18px; height: 18px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .6rem;
+      transition: background .18s, border-color .18s;
+    }
+    .mc-opt.selected .mc-marker {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #0a0b0d;
+    }
+
+    /* Open text (q15) */
+    .open-area {
+      width: 100%;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      font-size: .85rem;
+      padding: 1rem 1.2rem;
+      outline: none;
+      transition: border-color .2s;
+      resize: vertical;
+      min-height: 110px;
+    }
+    .open-area:focus { border-color: var(--gold); }
+
+    /* Nav buttons */
+    .q-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-top: 2.5rem;
+    }
+    .btn-back {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      font-family: 'Inter', sans-serif;
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: .75rem 1.4rem;
+      cursor: pointer;
+      transition: border-color .2s, color .2s;
+    }
+    .btn-back:hover { border-color: var(--gold); color: var(--gold); }
+    .btn-next {
+      background: var(--gold);
+      border: none;
+      color: #0a0b0d;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: .7rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: .85rem 2rem;
+      cursor: pointer;
+      transition: background .18s, transform .12s;
+    }
+    .btn-next:hover { background: var(--gold-lt); transform: translateY(-1px); }
+    .btn-next:disabled { opacity: .35; cursor: not-allowed; transform: none; }
+
+    .error-msg {
+      font-size: .7rem;
+      color: var(--red);
+      margin-top: .5rem;
+      display: none;
+    }
+
+    /* ── RESULTS ── */
+    #results { display: none; }
+    .results-wrap {
+      min-height: 100vh;
+      padding: 7rem 1.5rem 5rem;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+    .score-reveal {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      margin-bottom: 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .score-reveal::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,168,76,0.09) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .score-label {
+      font-size: .6rem;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.2rem;
+    }
+    .score-num {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(4rem, 12vw, 7rem);
+      color: var(--white);
+      line-height: 1;
+      font-weight: 300;
+    }
+    .score-num span { font-size: .45em; color: var(--text-muted); }
+    .score-tier {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      color: var(--gold-lt);
+      font-style: italic;
+      margin: .5rem 0 1rem;
+    }
+    .score-desc {
+      font-size: .82rem;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* dimension bar */
+    .dimension-bars { margin: 2.5rem 0; }
+    .dim-row { margin-bottom: 1.2rem; }
+    .dim-row-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: .4rem;
+    }
+    .dim-name {
+      font-size: .65rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .dim-score {
+      font-size: .65rem;
+      color: var(--gold);
+    }
+    .dim-track {
+      height: 2px;
+      background: var(--border);
+    }
+    .dim-fill {
+      height: 100%;
+      background: var(--gold);
+      transition: width 1s ease;
+      width: 0;
+    }
+
+    .insights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      margin: 3rem 0;
+    }
+    .insight-card {
+      background: var(--bg2);
+      padding: 2rem 1.5rem;
+    }
+    .insight-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: var(--gold);
+      opacity: .5;
+      margin-bottom: .8rem;
+    }
+    .insight-card h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: .5rem;
+    }
+    .insight-card p {
+      font-size: .75rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    .next-step-box {
+      border: 1px solid var(--gold);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      background: rgba(201,168,76,0.04);
+    }
+    .next-step-box h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 300;
+      font-size: 1.8rem;
+      color: var(--white);
+      margin-bottom: .8rem;
+    }
+    .next-step-box p {
+      font-size: .82rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .results-footer {
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .results-footer a {
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .results-footer a:hover { color: var(--gold); }
+
+    /* ── ANIMATIONS ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      nav { padding: 1rem 1.2rem; }
+      .value-grid { grid-template-columns: 1fr; }
+      .cred-wrap { grid-template-columns: 1fr; gap: 2.5rem; }
+      .insights-grid { grid-template-columns: 1fr; }
+      .hero-meta { gap: 1rem; flex-wrap: wrap; }
+      .btn-ghost { margin-left: 0; margin-top: .8rem; }
+    }
+
+    /* Nav styles */
+    .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    .btn-gold {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-gold::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transition: left 0.5s ease;
+    }
+    .btn-gold:hover::before { left: 150%; }
+
+    /* Mega-menu dropdown */
+    .mega-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px);
+      transition: opacity 0.2s ease, visibility 0.2s ease, transform 0.2s ease;
+    }
+    .nav-dropdown:hover .mega-menu,
+    .nav-dropdown:focus-within .mega-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    .nav-dropdown > a .chevron {
+      transition: transform 0.2s ease;
+    }
+    .nav-dropdown:hover > a .chevron {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ─── NAVIGATION ───────────────────────────────────────────────── -->
+<nav class="bg-deep-navy/90 backdrop-blur-md sticky top-0 z-50 border-b border-metallic-gold/20">
+  <div class="flex justify-between items-center w-full px-gutter py-5 max-w-container-max mx-auto">
+    <a href="index.html" class="flex items-center shrink-0"><img src="input assets/Attune_logo.png" alt="ATTUNE Executive Advisory" class="h-10 w-auto object-contain"/></a>
+    <div class="hidden md:flex gap-8 items-center">
+      <a class="font-label-caps text-label-caps text-stark-white/70 hover:text-metallic-gold transition-colors duration-200" href="framework.html">The Framework</a>
+      <div class="nav-dropdown relative">
+        <a href="for-teams.html" class="font-label-caps text-label-caps text-stark-white/70 hover:text-metallic-gold transition-colors duration-200 flex items-center gap-1 cursor-pointer">
+          For Teams
+          <span class="material-symbols-outlined chevron" style="font-size:14px;line-height:1;">expand_more</span>
+        </a>
+        <div class="mega-menu absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[640px] bg-deep-navy border border-metallic-gold/20 shadow-2xl z-50">
+          <div class="grid grid-cols-2">
+            <div class="p-8 border-r border-metallic-gold/10">
+              <p class="font-label-caps text-[10px] text-metallic-gold/50 tracking-[0.3em] mb-6 uppercase">Team Engagements</p>
+              <div class="space-y-6">
+                <a href="intensives.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">Alignment Intensives</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">Surgical 1–2 day sessions targeting leadership friction</p>
+                </a>
+                <a href="council.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">Strategic Leadership Council</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">Confidential quarterly peer advisory forum</p>
+                </a>
+                <a href="retreats.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">Bespoke Retreats</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">Two-day executive team deep-immersion experiences</p>
+                </a>
+              </div>
+            </div>
+            <div class="p-8">
+              <p class="font-label-caps text-[10px] text-metallic-gold/50 tracking-[0.3em] mb-6 uppercase">Start Here</p>
+              <div class="space-y-6">
+                <a href="assessment.html" class="block group/item cursor-pointer" aria-current="page">
+                  <p class="font-display-lg text-[15px] font-semibold text-metallic-gold group-hover/item:text-metallic-gold transition-colors duration-150">The Assessment</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">15 questions, 3 minutes, immediate results</p>
+                </a>
+                <a href="diagnostic.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">The Diagnostic</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">Download the free A.T.T.U.N.E.™ self-assessment PDF</p>
+                </a>
+                <a href="framework.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">The Framework</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">All six dimensions of leadership alignment explained</p>
+                </a>
+                <a href="case-studies.html" class="block group/item cursor-pointer">
+                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">Case Studies</p>
+                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">Real engagement outcomes and leadership shifts</p>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-metallic-gold/10 px-8 py-4 flex justify-between items-center bg-midnight-blue/60">
+            <p class="font-body-md text-[12px] text-on-surface-variant/45">Not sure which engagement fits your team?</p>
+            <a href="diagnostic.html" class="font-label-caps text-[10px] text-metallic-gold tracking-widest hover:underline flex items-center gap-1 cursor-pointer">
+              Book a Conversation
+              <span class="material-symbols-outlined" style="font-size:13px;line-height:1;">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a class="font-label-caps text-label-caps text-stark-white/70 hover:text-metallic-gold transition-colors duration-200" href="case-studies.html">Case Studies</a>
+      <a class="font-label-caps text-label-caps text-stark-white/70 hover:text-metallic-gold transition-colors duration-200" href="about.html">About</a>
+      <a href="assessment.html" class="text-sm font-medium text-stark-white border border-stark-white/30 px-4 py-2 hover:border-metallic-gold hover:text-metallic-gold transition-all duration-300 tracking-wide uppercase mr-3">Self-Assessment</a>
+      <a href="diagnostic.html" class="btn-gold bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-6 py-3 hover:opacity-90 transition-all duration-300 active:scale-95 cursor-pointer">Book a Conversation</a>
+    </div>
+    <button id="mobile-menu-btn" class="md:hidden text-metallic-gold cursor-pointer" aria-label="Open menu">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+  </div>
+  <div id="mobile-menu" class="hidden md:hidden bg-deep-navy border-t border-metallic-gold/20 px-gutter py-6 flex flex-col gap-6">
+    <a class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold" href="framework.html">The Framework</a>
+    <div>
+      <button id="mobile-teams-btn" class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold flex items-center gap-1 w-full cursor-pointer">
+        For Teams
+        <span class="material-symbols-outlined text-[14px] transition-transform duration-200" id="mobile-teams-chevron">expand_more</span>
+      </button>
+      <div id="mobile-teams-sub" class="hidden mt-3 pl-4 border-l border-metallic-gold/20 flex flex-col gap-3">
+        <a class="font-body-md text-[14px] text-stark-white/70 hover:text-metallic-gold" href="assessment.html">Self-Assessment</a>
+        <a class="font-body-md text-[14px] text-stark-white/70 hover:text-metallic-gold" href="intensives.html">Alignment Intensives</a>
+        <a class="font-body-md text-[14px] text-stark-white/70 hover:text-metallic-gold" href="council.html">Strategic Leadership Council</a>
+        <a class="font-body-md text-[14px] text-stark-white/70 hover:text-metallic-gold" href="retreats.html">Bespoke Retreats</a>
+        <a class="font-body-md text-[14px] text-stark-white/70 hover:text-metallic-gold" href="for-teams.html">↳ Overview</a>
+      </div>
+    </div>
+    <a class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold" href="case-studies.html">Case Studies</a>
+    <a class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold" href="about.html">About</a>
+    <a href="assessment.html" class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold">Self-Assessment</a>
+    <a href="diagnostic.html" class="bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-6 py-3 text-center">Book a Conversation</a>
+  </div>
+</nav>
+
+<!-- ══════════════════ LANDING ══════════════════ -->
+<div id="landing">
+
+  <!-- HERO / HOOK -->
+  <div class="hero">
+    <p class="hero-eyebrow">A.T.T.U.N.E.™ Leadership Assessment</p>
+
+    <h1>Are you ready to see exactly <em>where your leadership costs you</em> — before it costs you the room?</h1>
+
+    <p class="hero-sub">
+      Answer 15 questions to find out why your team's execution doesn't match your strategic vision — and what to do about it.
+    </p>
+
+    <div class="hero-cta">
+      <button class="btn-primary" onclick="startQuiz()">Start the Assessment</button>
+      <a href="#value" class="btn-ghost">Learn More</a>
+    </div>
+
+    <div class="hero-meta">
+      <div class="hero-meta-item">15 Questions</div>
+      <div class="hero-meta-item">3 Minutes</div>
+      <div class="hero-meta-item">Completely Free</div>
+      <div class="hero-meta-item">Immediate Results</div>
+    </div>
+  </div>
+
+  <!-- VALUE PROPOSITION -->
+  <section id="value" style="border-top:1px solid var(--border);">
+    <p class="section-label">What We Measure</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(1.8rem,4vw,3rem);color:var(--white);line-height:1.15;max-width:620px;margin-bottom:.5rem;">
+      Take this assessment so we can <em style="font-style:italic;color:var(--gold-lt);">measure and improve</em> three critical dimensions.
+    </h2>
+    <p style="font-size:.82rem;color:var(--text-muted);max-width:540px;margin-bottom:2.5rem;">
+      Most leadership breakdowns aren't about strategy or capability. They're about alignment — and alignment has a structure you can map.
+    </p>
+
+    <div class="value-grid">
+      <div class="value-card">
+        <div class="value-num">01</div>
+        <h3>Leadership Alignment Under Pressure</h3>
+        <p>How reliably your awareness, tone, and trust hold when stakes are highest and the room is watching.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">02</div>
+        <h3>Team Trust & Communication Dynamics</h3>
+        <p>Whether your team has the psychological architecture to name hard truths and execute with genuine confidence.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-num">03</div>
+        <h3>Execution Clarity & Decision Speed</h3>
+        <p>The degree to which your executive team shares a common definition of success — and can move on it decisively.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDIBILITY -->
+  <section style="border-top:1px solid var(--border);">
+    <p class="section-label">The Architect</p>
+    <div class="cred-wrap">
+      <div class="cred-bio">
+        <h2>Claudia Beck, <em>MCC</em></h2>
+        <p>
+          ICF Master Certified Coach — the highest credential in the field. Claudia has spent three decades advising CEOs, founders, and executive boards at some of the world's most demanding organizations.
+        </p>
+        <p>
+          Her work at Burberry, Gap Inc., Tory Burch, PwC, and global financial institutions gave her a clinical view of what separates leadership that scales from leadership that stalls. The A.T.T.U.N.E.™ framework distils that into a diagnostic architecture.
+        </p>
+        <p>
+          This assessment is built on the same six-dimension model she uses in every engagement. The data it reveals is real — and so are the next steps.
+        </p>
+
+        <ul class="research-points" style="margin-top:1.8rem;">
+          <li>85% of executive team failures trace to misalignment — not strategy, not capability.</li>
+          <li>Harvard Business Review: teams that name "the unsaid" outperform peers by 2.3× in execution speed.</li>
+          <li>Leaders who operate with calibrated self-awareness resolve conflict 40% faster.</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="stats-grid">
+          <div class="stat-box"><div class="num">6,000+</div><div class="label">Executive Sessions</div></div>
+          <div class="stat-box"><div class="num">30+</div><div class="label">Years Advising</div></div>
+          <div class="stat-box"><div class="num">ICF MCC</div><div class="label">Highest Credential</div></div>
+          <div class="stat-box"><div class="num">5</div><div class="label">Countries</div></div>
+        </div>
+
+        <blockquote style="border-left:2px solid var(--gold);padding-left:1.5rem;margin-top:2rem;">
+          <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--text);line-height:1.7;margin-bottom:.8rem;">
+            "She had an ability to ask the exact question that needed to be asked — often the one just beneath the surface — and helped me build leadership practices that have stayed with me years later."
+          </p>
+          <cite style="font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);">— Daniel Kendzior, Managing Director, Accenture</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <div class="cta-section">
+    <h2>Start the assessment.<br><em>Find out where you stand.</em></h2>
+    <p>15 questions. Personalized results based on how you answer. Immediate next steps tailored to your leadership stage.</p>
+    <button class="btn-primary" onclick="startQuiz()">Start the Assessment</button>
+    <div class="cta-badges">
+      <div class="badge"><span class="dot"></span>15 Questions</div>
+      <div class="badge"><span class="dot"></span>Only 3 Minutes</div>
+      <div class="badge"><span class="dot"></span>Completely Free</div>
+      <div class="badge"><span class="dot"></span>Immediate Recommendations</div>
+    </div>
+  </div>
+
+</div><!-- /landing -->
+
+<!-- ══════════════════ QUIZ ══════════════════ -->
+<div id="quiz">
+<div class="quiz-wrap">
+
+  <div class="quiz-progress-bar-outer">
+    <div class="quiz-progress-bar-inner" id="progressBar" style="width:0%"></div>
+  </div>
+  <p class="quiz-step-label" id="stepLabel">Step 1 of 17</p>
+
+  <!-- ── STEP 0: Contact capture ── -->
+  <div id="step-0" class="contact-step">
+    <h2>Before we begin — a few details so we can personalize your results.</h2>
+    <p>Your results and recommendations will be emailed to you immediately after you complete the assessment.</p>
+    <div class="form-group">
+      <label>First Name *</label>
+      <input type="text" id="f_name" placeholder="Your first name" />
+    </div>
+    <div class="form-group">
+      <label>Work Email *</label>
+      <input type="email" id="f_email" placeholder="your@company.com" />
+    </div>
+    <div class="form-group">
+      <label>Phone <span class="optional-tag">(optional)</span></label>
+      <input type="tel" id="f_phone" placeholder="+1 (555) 000-0000" />
+    </div>
+    <p id="err-contact" class="error-msg">Please enter your name and a valid work email.</p>
+    <div class="q-nav">
+      <button class="btn-next" onclick="nextStep()">Begin Assessment →</button>
+    </div>
+  </div>
+
+  <!-- ── BEST PRACTICES Q1–Q10 ── -->
+
+  <div id="step-1" class="question-step">
+    <p class="section-label">Awareness</p>
+    <h2 class="question-head">Before high-stakes decisions, do you deliberately surface blind spots — not just review the data?</h2>
+    <div class="rating-row">
+      <button class="rating-opt" onclick="selectYN(this, 1, 1)">Consistently</button>
+      <button class="rating-opt" onclick="selectYN(this, 1, 0.5)">Sometimes</button>
+      <button class="rating-opt" onclick="selectYN(this, 1, 0)">Rarely</button>
+    </div>
+    <p id="err-1" class="error-msg">Please select an answer to continue.</p>
+    <div class="q-nav">
+      <button class="btn-back" onclick="prevStep()">Back</button>
+      <button class="btn-next" id="btn-1" onclick="nextStep()">Continue →</button>
+    </div>
+  </div>
+
+  <div id="step-2" class="question-step">
+    <p class="section-label">Awareness</p>
+    <h2 class="question-head">Does your team feel genuinely safe flagging uncomfortable truths to you — without softening them?</h2>
+    <div class="rating-row">
+      <button class="rating-opt" onclick="selectYN(this, 2, 1)">Consistently</button>
+      <button class="rating-opt" onclick="selectYN(this, 2, 0.5)">Sometimes</button>
+      <button class="rating-opt" onclick="selectYN(this, 2, 0)">Rarely</button>
+    </div>
+    <p id="err-2" class="error-msg">Please select an answer to continue.</p>
+    <div class="q-nav">
+      <button class="btn-back" onclick="prevStep()">Back</button>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+  </div>
+
+  <div id="step-3" class="question-step">
+    <p class="section-label">Tone</p>
+    <h2 class="question-head">Do you deliberately regulate the emotional climate of the room before high-stakes meetings?</h2>
+    <div class="rating-row">
+      <button class="rating-opt" onclick="selectYN(this, 3, 1)">Consistently</button>
+      <button class="rating-opt" onclick="selectYN(this, 3, 0.5)">Sometimes</button>
+      <button class="rating-opt" onclick="selectYN(this, 3, 0)">Rarely</button>
+    </div>
+    <p id="err-3" class="error-msg">Please select an answer to continue.</p>
+    <div class="q-nav">
+      <button class="btn-back" onclick="prevStep()">Back</button>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+  </div>
+
+  <div id="step-4" class="question-step">
+    <p class="section-label">Tone</p>
+    <h2 class="question-head">Would you say your team's communication is shaped more by what needs to be said — than by your current mood or pressure level?</h2>
+    <div class="rating-row">
+      <button class="rating-opt" onclick="selectYN(this, 4, 1)">Consistently</button>
+      <button class="rating-opt" onclick="selectYN(this, 4, 0.5)">Sometimes</button>
+      <button class="rating-opt" onclick="selectYN(this, 4, 0)">Rarely</button>
+    </div>
+    <p id="err-4" class="error-msg">Please select an answer to continue.</p>
+    <div class="q-nav">
+      <button class="btn-back" onclick="prevStep()">Back</button>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+  </div>
+
+  <div id="step-5" class="question-step">
+    <p class="section-label">Trust</p>
+    <h2 class="question-head">Would your peers take a significant strategic risk based solely on your word — without needing further validation?</h2>
+    <div class="rating-row">
+      <button class="rating-opt" onclick="selectYN(this, 5, 1)">Consistently</button>
+      <button class="rating-opt" onclick="selectYN(this, 5, 0.5)">Sometimes</button>
+      <button class="rating-opt" onclick="selectYN(this, 5, 0)">Rarely</button>
+    </div>
+    <p id="err-5" class="error-msg">Please select an answer to continue.</p>
+    <div class="q-nav">
+      <button class="btn-back" onclick="prevStep()">Back</button>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+  </div>
+
+  <div id="step-6" class="question-step">
+    <p class="section-label">Trust</p>
+    <h2 class="question-head">Do you proactively build trust reserves before they're needed — not just repair them after they fracture?</h2>
+    <div class="rating-row">
+      <button class="rating-opt" onclick="selectYN(this, 6, 1)">Consistently</button>
+      <button class="rating-opt" onclick="selectYN(this, 6, 0.5)">Sometimes</button>
+      <button class="rating-opt" onclick="selectYN(this, 6, 0)">Rarely</button>
+    </div>
+    <p id="err-6" class="error-msg">Please select an answer to continue.</p>
+    <div class="q-nav">
+      <button class="btn-back" onclick="prevStep()">Back</button>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+  </div>
+
+  <div id="step-7" class="question-step">
+    <p class="section-label">Understanding</p>
+    <h2 class="question-head">Does your executive team define "success" the same way — including what it costs and what it doesn't?</h2>
+    <div class="rating-row">
+      <button class="rating-opt" onclick="selectYN(this, 7, 1)">Consistently</button>
+      <button class="rating-opt" onclick="selectYN(this, 7, 0.5)">Sometimes</button>
+      <button class="rating-opt" onclick="selectYN(this, 7, 0)">Rarely</button>
+    </div>
+    <p id="err-7" class="error-msg">Please select an answer to continue.</p>
+    <div class="q-nav">
+      <button class="btn-back" onclick="prevStep()">Back</button>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+  </div>
+
+  <div id="step-8" class="question-step">
+    <p class="section-label">Naming</p>
+    <h2 class="question-head">Can you consistently name the real issue in the room — even when hierarchy or political risk makes it uncomfortable?</h2>
+    <div class="rating-row">
+      <button class="rating-opt" onclick="selectYN(this, 8, 1)">Consistently</button>
+      <button class="rating-opt" onclick="selectYN(this, 8, 0.5)">Sometimes</button>
+      <button class="rating-opt" onclick="selectYN(this, 8, 0)">Rarely</button>
+    </div>
+    <p id="err-8" class="error-msg">Please select an answer to continue.</p>
+    <div class="q-nav">
+      <button class="btn-back" onclick="prevStep()">Back</button>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+  </div>
+
+  <div id="step-9" class="question-step">
+    <p class="section-label">Naming</p>
+    <h2 class="question-head">Do you address underperformance directly and promptly — rather than working around it?</h2>
+    <div class="rating-row">
+      <button class="rating-opt" onclick="selectYN(this, 9, 1)">Consistently</button>
+      <button class="rating-opt" onclick="selectYN(this, 9, 0.5)">Sometimes</button>
+      <button class="rating-opt" onclick="selectYN(this, 9, 0)">Rarely</button>
+    </div>
+    <p id="err-9" class="error-msg">Please select an answer to continue.</p>
+    <div class="q-nav">
+      <button class="btn-back" onclick="prevStep()">Back</button>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+  </div>
+
+  <div id="step-10" class="question-step">
+    <p class="section-label">Equilibrium</p>
+    <h2 class="question-head">Under organizational pressure — rapid growth, transition, conflict — do you maintain strategic composure and keep your team oriented?</h2>
+    <div class="rating-row">
+      <button class="rating-opt" onclick="selectYN(this, 10, 1)">Consistently</button>
+      <button class="rating-opt" onclick="selectYN(this, 10, 0.5)">Sometimes</button>
+      <button class="rating-opt" onclick="selectYN(this, 10, 0)">Rarely</button>
+    </div>
+    <p id="err-10" class="error-msg">Please select an answer to continue.</p>
+    <div class="q-nav">
+      <button class="btn-back" onclick="prevStep()">Back</button>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+  </div>
+
+  <!-- ── QUALIFYING Q11–Q15 ── -->
+
+  <div id="step-11" class="question-step">
+    <p class="section-label">Your Context</p>
+    <h2 class="question-head">Which best describes your current role?</h2>
+    <div class="mc-list">
+      <button class="mc-opt" onclick="selectMC(this, 11)"><span class="mc-marker">✓</span>CEO or Founder</button>
+      <button class="mc-opt" onclick="selectMC(this, 11)"><span class="mc-marker">✓</span>C-Suite Executive (CRO, CFO, COO, CMO, etc.)</button>
+      <button class="mc-opt" onclick="selectMC(this, 11)"><span class="mc-marker">✓</span>VP or Senior Director</button>
+      <button class="mc-opt" onclick="selectMC(this, 11)"><span class="mc-marker">✓</span>Board Member or Advisor</button>
+      <button class="mc-opt" onclick="selectMC(this, 11)"><span class="mc-marker">✓</span>Other Executive</button>
+    </div>
+    <p id="err-11" class="error-msg">Please select an option.</p>
+    <div class="q-nav">
+      <button class="btn-back" onclick="prevStep()">Back</button>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+  </div>
+
+  <div id="step-12" class="question-step">
+    <p class="section-label">Your Priority</p>
+    <h2 class="question-head">What outcome matters most to you in the next 90 days?</h2>
+    <div class="mc-list">
+      <button class="mc-opt" onclick="selectMC(this, 12)"><span class="mc-marker">✓</span>Accelerate growth or scale the organization</button>
+      <button class="mc-opt" onclick="selectMC(this, 12)"><span class="mc-marker">✓</span>Navigate a critical transition (succession, merger, restructure)</button>
+      <button class="mc-opt" onclick="selectMC(this, 12)"><span class="mc-marker">✓</span>Improve execution speed and team output</button>
+      <button class="mc-opt" onclick="selectMC(this, 12)"><span class="mc-marker">✓</span>Strengthen executive alignment and trust</button>
+      <button class="mc-opt" onclick="selectMC(this, 12)"><span class="mc-marker">✓</span>Address a specific leadership or cultural challenge</button>
+    </div>
+    <p id="err-12" class="error-msg">Please select an option.</p>
+    <div class="q-nav">
+      <button class="btn-back" onclick="prevStep()">Back</button>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+  </div>
+
+  <div id="step-13" class="question-step">
+    <p class="section-label">Your Obstacle</p>
+    <h2 class="question-head">What has blocked progress most — or what have you tried that hasn't fully worked?</h2>
+    <div class="mc-list">
+      <button class="mc-opt" onclick="selectMC(this, 13)"><span class="mc-marker">✓</span>Team dynamics, friction, or trust breakdowns</button>
+      <button class="mc-opt" onclick="selectMC(this, 13)"><span class="mc-marker">✓</span>Communication breakdowns or misaligned priorities</button>
+      <button class="mc-opt" onclick="selectMC(this, 13)"><span class="mc-marker">✓</span>Resistance to change or culture misalignment</button>
+      <button class="mc-opt" onclick="selectMC(this, 13)"><span class="mc-marker">✓</span>Decision-making bottlenecks or unclear ownership</button>
+      <button class="mc-opt" onclick="selectMC(this, 13)"><span class="mc-marker">✓</span>My own leadership patterns under pressure</button>
+    </div>
+    <p id="err-13" class="error-msg">Please select an option.</p>
+    <div class="q-nav">
+      <button class="btn-back" onclick="prevStep()">Back</button>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+  </div>
+
+  <div id="step-14" class="question-step">
+    <p class="section-label">Your Preferred Approach</p>
+    <h2 class="question-head">Which type of engagement would suit you best right now?</h2>
+    <div class="mc-list">
+      <button class="mc-opt" onclick="selectMC(this, 14)"><span class="mc-marker">✓</span>One-on-one advisory with Claudia</button>
+      <button class="mc-opt" onclick="selectMC(this, 14)"><span class="mc-marker">✓</span>Facilitated team intensive (1–2 days)</button>
+      <button class="mc-opt" onclick="selectMC(this, 14)"><span class="mc-marker">✓</span>Confidential peer advisory council (quarterly)</button>
+      <button class="mc-opt" onclick="selectMC(this, 14)"><span class="mc-marker">✓</span>Self-guided resources and framework access</button>
+    </div>
+    <p id="err-14" class="error-msg">Please select an option.</p>
+    <div class="q-nav">
+      <button class="btn-back" onclick="prevStep()">Back</button>
+      <button class="btn-next" onclick="nextStep()">Continue →</button>
+    </div>
+  </div>
+
+  <div id="step-15" class="question-step">
+    <p class="section-label">Final Question</p>
+    <h2 class="question-head">Is there anything else Claudia should know before reviewing your results?</h2>
+    <textarea class="open-area" id="f_open" placeholder="Share as much or as little as you'd like. The more context, the more precise the next steps."></textarea>
+    <div class="q-nav">
+      <button class="btn-back" onclick="prevStep()">Back</button>
+      <button class="btn-next" onclick="submitAssessment()">See My Results →</button>
+    </div>
+  </div>
+
+</div>
+</div><!-- /quiz -->
+
+<!-- ══════════════════ RESULTS ══════════════════ -->
+<div id="results">
+<div class="results-wrap">
+
+  <p class="section-label" id="res-eyebrow">Your A.T.T.U.N.E.™ Assessment Results</p>
+
+  <!-- Score reveal -->
+  <div class="score-reveal">
+    <p class="score-label">Overall Alignment Score</p>
+    <div class="score-num" id="res-score">—<span>/10</span></div>
+    <div class="score-tier" id="res-tier">—</div>
+    <p class="score-desc" id="res-desc">—</p>
+  </div>
+
+  <!-- Dimension bars -->
+  <p class="section-label" style="margin-bottom:1.2rem;">Dimension Breakdown</p>
+  <div class="dimension-bars" id="dim-bars"></div>
+
+  <!-- 3 Insights -->
+  <p class="section-label" style="margin-bottom:1.2rem;">Three Insights From Your Answers</p>
+  <div class="insights-grid" id="insights-grid"></div>
+
+  <!-- Next step -->
+  <div class="next-step-box" id="next-step-box" style="margin-top:3rem;">
+    <h3 id="ns-title">—</h3>
+    <p id="ns-desc">—</p>
+    <a href="#" id="ns-cta" class="btn-primary" style="text-decoration:none;">—</a>
+  </div>
+
+  <div class="results-footer">
+    <a href="index.html">← Return to ATTUNE</a>
+    <a href="framework.html">Explore the Framework →</a>
+    <a href="about.html">About Claudia →</a>
+  </div>
+
+  <div class="text-center mt-6">
+    <button onclick="location.reload()" class="text-xs text-on-surface-variant hover:text-metallic-gold transition-colors duration-200 underline underline-offset-2 tracking-wide">
+      Retake the assessment
+    </button>
+  </div>
+
+</div>
+</div><!-- /results -->
+
+
+<script>
+  /* ─────────────────────────────────────────
+     STATE
+  ───────────────────────────────────────── */
+  let currentStep = 0;
+  const TOTAL_STEPS = 15; // 1-10 bp, 11-14 qual, 15 open (step 0 is contact, not counted)
+  const answers = {}; // step -> score (bp) or text (mc/open)
+  const mcText  = {}; // step -> selected text
+
+  /* ─────────────────────────────────────────
+     NAVIGATION
+  ───────────────────────────────────────── */
+  function startQuiz() {
+    document.getElementById('landing').style.display = 'none';
+    document.getElementById('quiz').style.display = 'block';
+    window.scrollTo(0, 0);
+    showStep(0);
+  }
+
+  function showStep(n) {
+    document.querySelectorAll('[id^="step-"]').forEach(el => {
+      el.style.display = 'none';
+    });
+    const el = document.getElementById('step-' + n);
+    if (el) { el.style.display = 'block'; }
+    currentStep = n;
+    updateProgress();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function updateProgress() {
+    const progressEl = document.getElementById('progressBar');
+    const stepLabelEl = document.getElementById('stepLabel');
+
+    if (currentStep === 0) {
+      // Contact form - no step counter
+      progressEl.style.width = '0%';
+      stepLabelEl.textContent = '';
+    } else {
+      // Questions 1-15
+      const pct = Math.round((currentStep / TOTAL_STEPS) * 100);
+      progressEl.style.width = pct + '%';
+      stepLabelEl.textContent = 'Step ' + currentStep + ' of ' + TOTAL_STEPS;
+    }
+  }
+
+  function nextStep() {
+    if (!validateStep(currentStep)) return;
+    if (currentStep < TOTAL_STEPS) {
+      showStep(currentStep + 1);
+    }
+  }
+
+  function prevStep() {
+    if (currentStep > 0) showStep(currentStep - 1);
+  }
+
+  /* ─────────────────────────────────────────
+     VALIDATION
+  ───────────────────────────────────────── */
+  function validateStep(n) {
+    // Contact step
+    if (n === 0) {
+      const name  = document.getElementById('f_name').value.trim();
+      const email = document.getElementById('f_email').value.trim();
+      const ok = name && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      document.getElementById('err-contact').style.display = ok ? 'none' : 'block';
+      return ok;
+    }
+    // Best practices 1-10
+    if (n >= 1 && n <= 10) {
+      const answered = answers[n] !== undefined;
+      const err = document.getElementById('err-' + n);
+      if (err) err.style.display = answered ? 'none' : 'block';
+      return answered;
+    }
+    // Qualifying 11-14
+    if (n >= 11 && n <= 14) {
+      const answered = mcText[n] !== undefined;
+      const err = document.getElementById('err-' + n);
+      if (err) err.style.display = answered ? 'none' : 'block';
+      return answered;
+    }
+    return true;
+  }
+
+  /* ─────────────────────────────────────────
+     SELECTION HANDLERS
+  ───────────────────────────────────────── */
+  function selectYN(el, step, val) {
+    el.closest('.rating-row').querySelectorAll('.rating-opt')
+      .forEach(b => b.classList.remove('selected'));
+    el.classList.add('selected');
+    answers[step] = val;
+    const err = document.getElementById('err-' + step);
+    if (err) err.style.display = 'none';
+  }
+
+  function selectMC(el, step) {
+    el.closest('.mc-list').querySelectorAll('.mc-opt')
+      .forEach(b => b.classList.remove('selected'));
+    el.classList.add('selected');
+    mcText[step] = el.textContent.replace('✓', '').trim();
+    const err = document.getElementById('err-' + step);
+    if (err) err.style.display = 'none';
+  }
+
+  /* ─────────────────────────────────────────
+     SUBMIT & RESULTS
+  ───────────────────────────────────────── */
+  function submitAssessment() {
+    // Calculate raw score out of 10
+    let raw = 0;
+    for (let i = 1; i <= 10; i++) {
+      raw += (answers[i] || 0);
+    }
+    const score = Math.round(raw * 10) / 10;
+
+    // Dimension scores (pairs)
+    const dims = [
+      { name: 'Awareness',    q: [1, 2] },
+      { name: 'Tone',         q: [3, 4] },
+      { name: 'Trust',        q: [5, 6] },
+      { name: 'Understanding',q: [7] },
+      { name: 'Naming',       q: [8, 9] },
+      { name: 'Equilibrium',  q: [10] },
+    ];
+
+    // Hide quiz, show results
+    document.getElementById('quiz').style.display = 'none';
+    document.getElementById('results').style.display = 'block';
+    window.scrollTo(0, 0);
+
+    // Score display
+    document.getElementById('res-score').innerHTML =
+      score.toFixed(1) + '<span>/10</span>';
+
+    let tier, desc, nsTitle, nsDesc, nsCta, nsHref;
+
+    if (score >= 7.5) {
+      tier    = 'Strong Foundation';
+      desc    = 'Your leadership alignment is operating at a high level across most dimensions. The gap between your strategic intent and your team\'s execution is narrow — but narrowing it further is where the real leverage lives. A focused debrief will reveal the one or two edges that, if sharpened, create disproportionate impact.';
+      nsTitle = 'Book a 30-Minute Debrief with Claudia';
+      nsDesc  = 'A personalised conversation to map exactly where your highest-leverage leadership edge is — and what to do about it.';
+      nsCta   = 'Book a Debrief';
+      nsHref  = 'diagnostic.html';
+    } else if (score >= 4.5) {
+      tier    = 'Active Development';
+      desc    = 'There are clear strengths in your leadership architecture — and equally clear patterns that are creating friction or slowing execution. The dimensions where you rated lower are not weaknesses; they\'re the edges where the most meaningful growth happens. The path forward is structural, not motivational.';
+      nsTitle = 'Explore the Strategic Leadership Council';
+      nsDesc  = 'A confidential quarterly peer advisory forum for executives navigating the exact challenges your results surfaced. Facilitated by Claudia Beck, MCC.';
+      nsCta   = 'Learn About the Council';
+      nsHref  = 'council.html';
+    } else {
+      tier    = 'Growth Edge Identified';
+      desc    = 'Your results reveal significant misalignment between leadership intent and execution reality. This is not uncommon at pivotal growth stages — but left unaddressed, it compounds. The A.T.T.U.N.E.™ framework was built precisely for this moment. Start with the diagnostic PDF to understand the architecture.';
+      nsTitle = 'Download the Full A.T.T.U.N.E.™ Framework';
+      nsDesc  = 'The complete six-dimension framework — principles, behavioral descriptions, and the questions that reveal where your leadership holds and where it costs you.';
+      nsCta   = 'Download the Framework';
+      nsHref  = 'diagnostic.html';
+    }
+
+    document.getElementById('res-tier').textContent = tier;
+    document.getElementById('res-desc').textContent = desc;
+    document.getElementById('ns-title').textContent = nsTitle;
+    document.getElementById('ns-desc').textContent  = nsDesc;
+    document.getElementById('ns-cta').textContent   = nsCta;
+    document.getElementById('ns-cta').href          = nsHref;
+
+    // Dimension bars
+    const barsEl = document.getElementById('dim-bars');
+    barsEl.innerHTML = '';
+    dims.forEach(d => {
+      const pts  = d.q.reduce((s, q) => s + (answers[q] || 0), 0);
+      const pct  = Math.round((pts / d.q.length) * 100);
+      barsEl.innerHTML += `
+        <div class="dim-row">
+          <div class="dim-row-top">
+            <span class="dim-name">${d.name}</span>
+            <span class="dim-score">${pct}%</span>
+          </div>
+          <div class="dim-track"><div class="dim-fill" style="width:${pct}%"></div></div>
+        </div>`;
+    });
+
+    // Trigger bar animation after paint
+    setTimeout(() => {
+      document.querySelectorAll('.dim-fill').forEach(f => {
+        f.style.width = f.style.width; // force repaint
+      });
+    }, 100);
+
+    // Insights (derived from answers)
+    const weakDims = dims
+      .map(d => ({
+        name: d.name,
+        pct: Math.round((d.q.reduce((s, q) => s + (answers[q] || 0), 0) / d.q.length) * 100)
+      }))
+      .sort((a, b) => a.pct - b.pct);
+
+    const strongDim = dims
+      .map(d => ({
+        name: d.name,
+        pct: Math.round((d.q.reduce((s, q) => s + (answers[q] || 0), 0) / d.q.length) * 100)
+      }))
+      .sort((a, b) => b.pct - a.pct)[0];
+
+    const insightData = buildInsights(score, weakDims[0], strongDim, mcText[13], mcText[12]);
+    const igEl = document.getElementById('insights-grid');
+    igEl.innerHTML = '';
+    insightData.forEach((ins, i) => {
+      igEl.innerHTML += `
+        <div class="insight-card">
+          <div class="insight-num">0${i+1}</div>
+          <h4>${ins.title}</h4>
+          <p>${ins.body}</p>
+        </div>`;
+    });
+  }
+
+  function buildInsights(score, weakDim, strongDim, obstacle, goal) {
+    const insights = [];
+
+    // Insight 1: primary growth edge
+    insights.push({
+      title: `Your Primary Growth Edge: ${weakDim.name}`,
+      body: `Your lowest-scoring dimension suggests this is where leadership friction is most likely showing up in your team's day-to-day execution. It's the dimension where the gap between intent and impact is widest.`
+    });
+
+    // Insight 2: anchor strength
+    insights.push({
+      title: `Your Anchor Strength: ${strongDim.name}`,
+      body: `This dimension is your most reliable foundation. Under pressure, you tend to stabilise here — which means it can also be leveraged more deliberately to counterbalance your growth edges.`
+    });
+
+    // Insight 3: contextual based on goal/obstacle
+    const obs = obstacle || 'team dynamics';
+    const gl  = goal    || 'accelerating execution';
+    insights.push({
+      title: 'The Pattern Beneath the Obstacle',
+      body: `You identified "${obs}" as your primary blocker and "${gl}" as your 90-day priority. These are connected — and the connection is almost always structural, not motivational. The A.T.T.U.N.E.™ framework maps exactly where.`
+    });
+
+    return insights;
+  }
+
+  /* Mobile menu handlers */
+  document.getElementById('mobile-menu-btn')?.addEventListener('click', () => {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  });
+
+  document.getElementById('mobile-teams-btn')?.addEventListener('click', () => {
+    const sub = document.getElementById('mobile-teams-sub');
+    const chevron = document.getElementById('mobile-teams-chevron');
+    sub.classList.toggle('hidden');
+    chevron.style.transform = sub.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+  });
+</script>
+
+</body>
+</html>
