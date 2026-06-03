@@ -848,10 +848,6 @@
                   <p class="font-display-lg text-[15px] font-semibold text-metallic-gold group-hover/item:text-metallic-gold transition-colors duration-150">The Assessment</p>
                   <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">15 questions, 3 minutes, immediate results</p>
                 </a>
-                <a href="diagnostic.html" class="block group/item cursor-pointer">
-                  <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">The Diagnostic</p>
-                  <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">Download the free A.T.T.U.N.E.™ self-assessment PDF</p>
-                </a>
                 <a href="framework.html" class="block group/item cursor-pointer">
                   <p class="font-display-lg text-[15px] font-semibold text-stark-white group-hover/item:text-metallic-gold transition-colors duration-150">The Framework</p>
                   <p class="font-body-md text-[13px] text-on-surface-variant/55 mt-1 leading-relaxed">All six dimensions of leadership alignment explained</p>
@@ -1469,7 +1465,7 @@
       nsTitle = 'Book a 30-Minute Debrief with Claudia';
       nsDesc  = 'A personalised conversation to map exactly where your highest-leverage leadership edge is — and what to do about it.';
       nsCta   = 'Book a Debrief';
-      nsHref  = 'diagnostic.html';
+      nsHref  = 'about.html';
     } else if (score >= 4.5) {
       tier    = 'Active Development';
       desc    = 'There are clear strengths in your leadership architecture — and equally clear patterns that are creating friction or slowing execution. The dimensions where you rated lower are not weaknesses; they\'re the edges where the most meaningful growth happens. The path forward is structural, not motivational.';
@@ -1479,11 +1475,11 @@
       nsHref  = 'council.html';
     } else {
       tier    = 'Growth Edge Identified';
-      desc    = 'Your results reveal significant misalignment between leadership intent and execution reality. This is not uncommon at pivotal growth stages — but left unaddressed, it compounds. The A.T.T.U.N.E.™ framework was built precisely for this moment. Start with the diagnostic PDF to understand the architecture.';
-      nsTitle = 'Download the Full A.T.T.U.N.E.™ Framework';
-      nsDesc  = 'The complete six-dimension framework — principles, behavioral descriptions, and the questions that reveal where your leadership holds and where it costs you.';
-      nsCta   = 'Download the Framework';
-      nsHref  = 'diagnostic.html';
+      desc    = 'Your results reveal significant misalignment between leadership intent and execution reality. This is not uncommon at pivotal growth stages — but left unaddressed, it compounds. The A.T.T.U.N.E.™ framework was built precisely for this moment. Download your personalized results and the full framework to begin.';
+      nsTitle = 'Download Your Results & Framework';
+      nsDesc  = 'Your personalized assessment results paired with the complete A.T.T.U.N.E.™ framework — principles, behavioral descriptions, and the architecture designed for your next move.';
+      nsCta   = 'Download PDF';
+      nsHref  = '#download-results';
     }
 
     document.getElementById('res-tier').textContent = tier;
