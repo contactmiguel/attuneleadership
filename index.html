@@ -189,7 +189,7 @@
           </div>
           <div class="border-t border-metallic-gold/10 px-8 py-4 flex justify-between items-center bg-midnight-blue/60">
             <p class="font-body-md text-[12px] text-on-surface-variant/45">Not sure which engagement fits your team?</p>
-            <a href="about.html" class="font-label-caps text-[10px] text-metallic-gold tracking-widest hover:underline flex items-center gap-1 cursor-pointer">
+            <a href="#" data-booking-trigger class="font-label-caps text-[10px] text-metallic-gold tracking-widest hover:underline flex items-center gap-1 cursor-pointer">
               Book a Conversation
               <span class="material-symbols-outlined" style="font-size:13px;line-height:1;">arrow_forward</span>
             </a>
@@ -199,7 +199,7 @@
       <a class="font-label-caps text-label-caps text-stark-white/70 hover:text-metallic-gold transition-colors duration-200" href="case-studies.html">Case Studies</a>
       <a class="font-label-caps text-label-caps text-stark-white/70 hover:text-metallic-gold transition-colors duration-200" href="about.html">About</a>
       <a href="assessment.html" class="text-sm font-medium text-stark-white border border-stark-white/30 px-4 py-2 hover:border-metallic-gold hover:text-metallic-gold transition-all duration-300 tracking-wide uppercase mr-3">Self-Assessment</a>
-      <a href="about.html" class="btn-gold bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-6 py-3 hover:opacity-90 transition-all duration-300 active:scale-95 cursor-pointer">Book a Conversation</a>
+      <a href="#" data-booking-trigger class="btn-gold bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-6 py-3 hover:opacity-90 transition-all duration-300 active:scale-95 cursor-pointer">Book a Conversation</a>
     </div>
     <button id="mobile-menu-btn" class="md:hidden text-metallic-gold cursor-pointer" aria-label="Open menu">
       <span class="material-symbols-outlined">menu</span>
@@ -223,7 +223,7 @@
     <a class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold" href="case-studies.html">Case Studies</a>
     <a class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold" href="about.html">About</a>
     <a href="assessment.html" class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold">Self-Assessment</a>
-    <a href="about.html" class="bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-6 py-3 hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer">Book a Conversation</a>
+    <a href="#" data-booking-trigger class="bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-6 py-3 hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer">Book a Conversation</a>
   </div>
 </nav>
 
@@ -699,7 +699,7 @@
       <p class="font-body-lg text-body-lg text-on-surface-variant/70 mb-12 max-w-xl mx-auto leading-relaxed">
         We work with a select number of executive teams annually. Let's determine if your challenges align with our methodology.
       </p>
-      <a href="about.html" class="btn-gold inline-block bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-14 py-5 hover:opacity-90 transition-all active:scale-98 cursor-pointer tracking-[0.2em] font-semibold">
+      <a href="#" data-booking-trigger class="btn-gold inline-block bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-14 py-5 hover:opacity-90 transition-all active:scale-98 cursor-pointer tracking-[0.2em] font-semibold">
         Book Your Initial Diagnostic
       </a>
       <p class="mt-6 font-label-caps text-[10px] text-stark-white/25 tracking-[0.3em]">DISCRETION IS OUR BASELINE</p>
@@ -798,5 +798,6 @@
   const statSection = document.querySelector('.stat-item')?.closest('div');
   if (statSection) statObserver.observe(statSection);
 </script>
+<script src="/booking-modal.js"></script>
 </body>
 </html>

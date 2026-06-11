@@ -126,7 +126,7 @@
           <!-- Bottom CTA bar -->
           <div class="border-t border-metallic-gold/10 px-8 py-4 flex justify-between items-center bg-midnight-blue/60">
             <p class="font-body-md text-[12px] text-on-surface-variant/45">Not sure which engagement fits your team?</p>
-            <a href="about.html" class="font-label-caps text-[10px] text-metallic-gold tracking-widest hover:underline flex items-center gap-1 cursor-pointer">
+            <a href="#" data-booking-trigger class="font-label-caps text-[10px] text-metallic-gold tracking-widest hover:underline flex items-center gap-1 cursor-pointer">
               Book a Conversation
               <span class="material-symbols-outlined" style="font-size:13px;line-height:1;">arrow_forward</span>
             </a>
@@ -136,7 +136,7 @@
       <a class="font-label-caps text-label-caps text-stark-white/70 hover:text-metallic-gold transition-colors duration-200" href="case-studies.html">Case Studies</a>
       <a class="font-label-caps text-label-caps text-metallic-gold border-b border-metallic-gold/60 pb-0.5 transition-colors duration-200" href="about.html">About</a>
       <a href="assessment.html" class="text-sm font-medium text-stark-white border border-stark-white/30 px-4 py-2 hover:border-metallic-gold hover:text-metallic-gold transition-all duration-300 tracking-wide uppercase mr-3">Self-Assessment</a>
-      <a href="about.html" class="bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-6 py-3 hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer">Book a Conversation</a>
+      <a href="#" data-booking-trigger class="bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-6 py-3 hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer">Book a Conversation</a>
     </div>
     <button id="mobile-menu-btn" class="md:hidden text-metallic-gold cursor-pointer" aria-label="Open menu">
       <span class="material-symbols-outlined">menu</span>
@@ -160,7 +160,7 @@
     <a class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold" href="case-studies.html">Case Studies</a>
     <a class="font-label-caps text-label-caps text-metallic-gold" href="about.html">About</a>
     <a href="assessment.html" class="font-label-caps text-label-caps text-stark-white/80 hover:text-metallic-gold">Self-Assessment</a>
-    <a href="about.html" class="bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-6 py-3 hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer">Book a Conversation</a>
+    <a href="#" data-booking-trigger class="bg-metallic-gold text-deep-navy font-label-caps text-label-caps px-6 py-3 hover:opacity-90 transition-all duration-200 active:scale-95 cursor-pointer">Book a Conversation</a>
   </div>
 </nav>
 
@@ -316,7 +316,7 @@
   <div class="max-w-2xl mx-auto relative z-10 reveal">
     <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-stark-white mb-stack-lg">let's talk.</h2>
     <p class="font-body-lg text-stark-white/60 mb-12">If this resonates — if the problem your team is navigating sounds like what is described here —</p>
-    <a href="about.html" class="bg-metallic-gold text-deep-navy px-12 py-5 font-label-caps text-label-caps font-bold tracking-[0.2em] active:scale-95 transition-transform inline-block">BOOK A 30-MINUTE CONVERSATION</a>
+    <a href="#" data-booking-trigger class="bg-metallic-gold text-deep-navy px-12 py-5 font-label-caps text-label-caps font-bold tracking-[0.2em] active:scale-95 transition-transform inline-block">BOOK A 30-MINUTE CONVERSATION</a>
     <p class="mt-6 font-label-caps text-[11px] text-stark-white/40 uppercase tracking-widest">Not a sales call. A diagnostic one.</p>
   </div>
   <div class="absolute -bottom-24 -right-24 w-96 h-96 border border-metallic-gold/10 rounded-full pointer-events-none"></div>
@@ -420,5 +420,6 @@
     });
   }
 </script>
+<script src="/booking-modal.js"></script>
 </body>
 </html>
