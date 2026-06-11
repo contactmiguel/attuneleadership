@@ -314,25 +314,45 @@
 
 <!-- Footer -->
 <footer class="bg-midnight-blue border-t border-metallic-gold/10">
-  <div class="flex flex-col md:flex-row justify-between items-start px-gutter py-section-padding-vertical max-w-container-max mx-auto gap-stack-lg">
-    <div>
-      <a href="index.html" class="font-display-lg text-headline-sm text-metallic-gold block mb-4">ATTUNE</a>
-      <p class="font-body-md text-on-surface-variant max-w-sm">Strategic leadership advisory for high-consequence environments.</p>
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-stack-lg px-gutter py-section-padding-vertical max-w-container-max mx-auto">
+    <div class="md:col-span-4">
+      <div class="font-display-lg text-headline-sm text-metallic-gold mb-4 tracking-tighter">ATTUNE</div>
+      <p class="font-body-md text-body-md text-on-surface-variant/60 max-w-xs leading-relaxed">High-consequence leadership dynamics and executive team alignment.</p>
     </div>
-    <div class="grid grid-cols-2 gap-stack-lg">
-      <div class="flex flex-col gap-4">
-        <a class="font-body-md text-on-surface-variant hover:text-metallic-gold underline transition-all" href="framework.html">The Framework</a>
-        <a class="font-body-md text-on-surface-variant hover:text-metallic-gold underline transition-all" href="for-teams.html">For Teams</a>
-        <a class="font-body-md text-metallic-gold underline transition-all" href="case-studies.html">Case Studies</a>
-      </div>
-      <div class="flex flex-col gap-4">
-        <a class="font-body-md text-on-surface-variant hover:text-metallic-gold underline transition-all" href="about.html">About</a>
-        <a class="font-body-md text-on-surface-variant hover:text-metallic-gold underline transition-all" href="#">Privacy Policy</a>
+    <div class="md:col-span-2">
+      <h5 class="font-label-caps text-label-caps text-metallic-gold/70 mb-6">NAVIGATE</h5>
+      <ul class="space-y-3">
+        <li><a class="font-body-md text-[15px] text-on-surface-variant/60 hover:text-stark-white transition-colors" href="framework.html">Framework</a></li>
+        <li><a class="font-body-md text-[15px] text-on-surface-variant/60 hover:text-stark-white transition-colors" href="for-teams.html">Team Programs</a></li>
+        <li><a class="font-body-md text-[15px] text-on-surface-variant/60 hover:text-stark-white transition-colors" href="case-studies.html">Case Studies</a></li>
+        <li><a class="font-body-md text-[15px] text-on-surface-variant/60 hover:text-stark-white transition-colors" href="assessment.html">Self-Assessment</a></li>
+        <li><a class="font-body-md text-[15px] text-on-surface-variant/60 hover:text-stark-white transition-colors" href="about.html">About</a></li>
+      </ul>
+    </div>
+    <div class="md:col-span-2">
+      <h5 class="font-label-caps text-label-caps text-metallic-gold/70 mb-6">CONNECT</h5>
+      <ul class="space-y-3">
+        <li><a class="font-body-md text-[15px] text-on-surface-variant/60 hover:text-stark-white transition-colors" href="#">LinkedIn</a></li>
+        <li><a class="font-body-md text-[15px] text-on-surface-variant/60 hover:text-stark-white transition-colors" href="about.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="md:col-span-4">
+      <h5 class="font-label-caps text-label-caps text-metallic-gold/70 mb-6">NEWSLETTER</h5>
+      <p class="font-body-md text-[15px] text-on-surface-variant/60 mb-6 leading-relaxed">Monthly insights on C-Suite dynamics.</p>
+      <div class="flex border-b border-metallic-gold/20 pb-2">
+        <input class="bg-transparent border-none focus:ring-0 text-stark-white w-full font-body-md text-[15px] placeholder:text-on-surface-variant/30" placeholder="Email Address" type="email"/>
+        <button class="text-metallic-gold/50 hover:text-metallic-gold hover:translate-x-1 transition-all cursor-pointer" aria-label="Subscribe">
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
       </div>
     </div>
   </div>
-  <div class="max-w-container-max mx-auto px-gutter pb-stack-lg border-t border-metallic-gold/5 pt-8 flex justify-between items-center">
-    <p class="font-body-md text-on-surface-variant opacity-60">© 2026 ATTUNE Leadership Advisory. All rights reserved.</p>
+  <div class="max-w-container-max mx-auto px-gutter py-6 flex flex-col md:flex-row justify-between items-center gap-4 border-t border-metallic-gold/5">
+    <p class="font-body-md text-[13px] text-on-surface-variant/30">© 2026 ATTUNE Leadership. All rights reserved.</p>
+    <div class="flex gap-8">
+      <a class="font-label-caps text-[10px] text-on-surface-variant/30 hover:text-metallic-gold transition-colors" href="#">PRIVACY POLICY</a>
+      <a class="font-label-caps text-[10px] text-on-surface-variant/30 hover:text-metallic-gold transition-colors" href="#">TERMS OF SERVICE</a>
+    </div>
   </div>
 </footer>
 
