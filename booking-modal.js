@@ -2,7 +2,7 @@
   // ─── CONFIGURATION ────────────────────────────────────────────────────────
   // 1. Go to https://formspree.io, create a free form, and paste the ID below.
   //    The form data will be emailed to whatever address you register with.
-  var FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORMSPREE_ID'
+  var FORMSPREE_ENDPOINT = 'https://formspree.io/f/xojzngwj'
 
   // 2. Calendly booking link — already correct for Claudia's calendar.
   var CALENDLY_URL = 'https://calendly.com/claudiabeck/30-min-check-in'
