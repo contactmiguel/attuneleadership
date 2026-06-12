@@ -79,6 +79,26 @@
       '<p class="text-stark-white/50 font-body-md text-[15px] mb-8 leading-relaxed">Team performance work requires the right context. Two minutes — and we\'ll know if this is the right fit.</p>',
       '<form id="bm-form" novalidate class="space-y-6">',
 
+      // Row 0: name + email
+      '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">',
+      '  <div>',
+      '    <label class="block text-stark-white font-body-md font-semibold mb-1 text-[14px] tracking-wide" for="bm-name">',
+      '      Your name <span style="color:#F8E193">*</span>',
+      '    </label>',
+      '    <input id="bm-name" type="text" placeholder="e.g. Jane Smith"',
+      '      class="w-full border border-metallic-gold/20 text-stark-white px-4 py-3 font-body-md text-[15px] focus:outline-none focus:border-metallic-gold/60 transition-colors placeholder:text-stark-white/25"',
+      '      style="background:#060A1C" />',
+      '  </div>',
+      '  <div>',
+      '    <label class="block text-stark-white font-body-md font-semibold mb-1 text-[14px] tracking-wide" for="bm-email">',
+      '      Your email <span style="color:#F8E193">*</span>',
+      '    </label>',
+      '    <input id="bm-email" type="email" placeholder="you@company.com"',
+      '      class="w-full border border-metallic-gold/20 text-stark-white px-4 py-3 font-body-md text-[15px] focus:outline-none focus:border-metallic-gold/60 transition-colors placeholder:text-stark-white/25"',
+      '      style="background:#060A1C" />',
+      '  </div>',
+      '</div>',
+
       // Row 1: role + org
       '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">',
       '  <div>',
@@ -131,15 +151,21 @@
   }
 
   function checkStep1Validity () {
+    var name = (document.getElementById('bm-name') ? document.getElementById('bm-name').value : '').trim()
+    var email = (document.getElementById('bm-email') ? document.getElementById('bm-email').value : '').trim()
     var role = (document.getElementById('bm-role') ? document.getElementById('bm-role').value : '').trim()
     var challenge = (document.getElementById('bm-challenge') ? document.getElementById('bm-challenge').value : '').trim()
     var btn = document.getElementById('bm-submit')
-    if (btn) btn.disabled = !(role && challenge)
+    if (btn) btn.disabled = !(name && email && role && challenge)
   }
 
   function bindStep1 () {
+    var nameEl = document.getElementById('bm-name')
+    var emailEl = document.getElementById('bm-email')
     var roleEl = document.getElementById('bm-role')
     var challengeEl = document.getElementById('bm-challenge')
+    if (nameEl) nameEl.addEventListener('input', checkStep1Validity)
+    if (emailEl) emailEl.addEventListener('input', checkStep1Validity)
     if (roleEl) roleEl.addEventListener('input', checkStep1Validity)
     if (challengeEl) challengeEl.addEventListener('input', checkStep1Validity)
     var form = document.getElementById('bm-form')
@@ -149,7 +175,12 @@
   function handleStep1Submit (e) {
     e.preventDefault()
 
+    var name = document.getElementById('bm-name').value.trim()
+    var email = document.getElementById('bm-email').value.trim()
+
     var payload = {
+      name: name,
+      email: email,
       role: document.getElementById('bm-role').value.trim(),
       organization: document.getElementById('bm-organization').value.trim(),
       teamChallenge: document.getElementById('bm-challenge').value.trim(),
@@ -164,10 +195,10 @@
       body: JSON.stringify(payload),
     }).catch(function () { /* silent — data capture is best-effort */ })
 
-    showStep2()
+    showStep2(name, email)
   }
 
-  function showStep2 () {
+  function showStep2 (name, email) {
     var modal = document.getElementById('booking-modal')
     if (modal) {
       modal.classList.remove('items-center')
@@ -187,7 +218,8 @@
       '<div id="bm-post-booking" class="mt-6"></div>',
     ].join('')
 
-    loadCalendly(CALENDLY_URL)
+    var calendlyUrl = CALENDLY_URL + '?name=' + encodeURIComponent(name || '') + '&email=' + encodeURIComponent(email || '')
+    loadCalendly(calendlyUrl)
     listenForBookingConfirmed()
   }
 
