@@ -509,6 +509,12 @@
     var email = form.querySelector('input[name="email"]').value.trim();
     if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return false;
 
+    fetch('https://formspree.io/f/mdavprll', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: name, email: email, _subject: 'Team Diagnostic Download' })
+    });
+
     var link = document.createElement('a');
     link.href = '/assets/Team_ATTUNE_Diagnostic_v2.pdf';
     link.download = 'Team_ATTUNE_Diagnostic.pdf';
