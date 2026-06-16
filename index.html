@@ -114,6 +114,7 @@
     .reveal, .reveal-delay-1, .reveal-delay-2, .reveal-delay-3 {
       opacity: 1; transform: none; transition: none;
     }
+    .stat-item { animation: none; opacity: 1; }
   }
 
   /* Mega-menu dropdown */
@@ -260,6 +261,48 @@
   </div>
 </header>
 
+<!-- ─── TRUST BAR ─────────────────────────────────────────────────── -->
+<section class="bg-deep-navy py-16 border-t border-metallic-gold/10">
+  <div class="max-w-container-max mx-auto px-gutter reveal">
+    <p class="font-label-caps text-[10px] text-stark-white/30 tracking-[0.3em] mb-8 text-center">TRUSTED BY LEADERS FROM</p>
+    <div class="flex flex-wrap justify-center items-center gap-x-14 gap-y-6">
+      <span class="font-display-lg text-[15px] tracking-[0.12em] text-stark-white/35 hover:text-stark-white/60 transition-colors cursor-default font-semibold">AMAZON</span>
+      <span class="w-px h-4 bg-stark-white/15 hidden md:block"></span>
+      <span class="font-display-lg text-[15px] tracking-[0.12em] text-stark-white/35 hover:text-stark-white/60 transition-colors cursor-default font-semibold">GOOGLE</span>
+      <span class="w-px h-4 bg-stark-white/15 hidden md:block"></span>
+      <span class="font-display-lg text-[15px] tracking-[0.12em] text-stark-white/35 hover:text-stark-white/60 transition-colors cursor-default font-semibold">PWC</span>
+      <span class="w-px h-4 bg-stark-white/15 hidden md:block"></span>
+      <span class="font-display-lg text-[15px] tracking-[0.12em] text-stark-white/35 hover:text-stark-white/60 transition-colors cursor-default font-semibold">AIRBNB</span>
+      <span class="w-px h-4 bg-stark-white/15 hidden md:block"></span>
+      <span class="font-display-lg text-[15px] tracking-[0.12em] text-stark-white/35 hover:text-stark-white/60 transition-colors cursor-default font-semibold">GOLDMAN SACHS</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STATS BAR ──────────────────────────────────────────────────── -->
+<section id="stats-bar" class="bg-[#F8F7F4] py-16 border-b border-deep-navy/10">
+  <div class="max-w-container-max mx-auto px-gutter reveal">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="stat-item" style="animation-delay:0.1s">
+        <div class="font-display-lg text-[clamp(28px,4vw,42px)] font-bold text-deep-navy tracking-tight mb-1"><span data-count="6000">0</span><span class="text-growth-edge">+</span></div>
+        <div class="font-label-caps text-[10px] text-deep-navy/50 tracking-widest">Executive Sessions</div>
+      </div>
+      <div class="stat-item" style="animation-delay:0.2s">
+        <div class="font-display-lg text-[clamp(28px,4vw,42px)] font-bold text-deep-navy tracking-tight mb-1"><span data-count="30">0</span><span class="text-growth-edge">+</span></div>
+        <div class="font-label-caps text-[10px] text-deep-navy/50 tracking-widest">Years Experience</div>
+      </div>
+      <div class="stat-item" style="animation-delay:0.3s">
+        <div class="font-display-lg text-[clamp(28px,4vw,42px)] font-bold text-deep-navy tracking-tight mb-1">C<span class="text-growth-edge">-</span>Suite</div>
+        <div class="font-label-caps text-[10px] text-deep-navy/50 tracking-widest">Focus Only</div>
+      </div>
+      <div class="stat-item" style="animation-delay:0.4s">
+        <div class="font-display-lg text-[clamp(28px,4vw,42px)] font-bold text-deep-navy tracking-tight mb-1">ICF<span class="text-growth-edge"> MCC</span></div>
+        <div class="font-label-caps text-[10px] text-deep-navy/50 tracking-widest">Highest Credential</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ─── PROBLEM STATEMENT ─────────────────────────────────────────── -->
 <!-- Redesign: warm cream bg, editorial asymmetric split, oversized section number, stat bar -->
 <section class="bg-[#F8F7F4] py-section-padding-vertical relative overflow-hidden">
@@ -294,27 +337,6 @@
       </div>
     </div>
 
-    <!-- Stat bar -->
-    <div class="mt-20 pt-10 border-t border-deep-navy/10 reveal reveal-delay-2">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div class="stat-item" style="animation-delay:0.1s">
-          <div class="font-display-lg text-[clamp(28px,4vw,42px)] font-bold text-deep-navy tracking-tight mb-1">6,000<span class="text-growth-edge">+</span></div>
-          <div class="font-label-caps text-[10px] text-deep-navy/50 tracking-widest">Executive Sessions</div>
-        </div>
-        <div class="stat-item" style="animation-delay:0.2s">
-          <div class="font-display-lg text-[clamp(28px,4vw,42px)] font-bold text-deep-navy tracking-tight mb-1">30<span class="text-growth-edge">+</span></div>
-          <div class="font-label-caps text-[10px] text-deep-navy/50 tracking-widest">Years Experience</div>
-        </div>
-        <div class="stat-item" style="animation-delay:0.3s">
-          <div class="font-display-lg text-[clamp(28px,4vw,42px)] font-bold text-deep-navy tracking-tight mb-1">C<span class="text-growth-edge">-</span>Suite</div>
-          <div class="font-label-caps text-[10px] text-deep-navy/50 tracking-widest">Focus Only</div>
-        </div>
-        <div class="stat-item" style="animation-delay:0.4s">
-          <div class="font-display-lg text-[clamp(28px,4vw,42px)] font-bold text-deep-navy tracking-tight mb-1">ICF<span class="text-growth-edge"> MCC</span></div>
-          <div class="font-label-caps text-[10px] text-deep-navy/50 tracking-widest">Highest Credential</div>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -439,24 +461,6 @@
       <a href="assessment.html" class="text-sm font-medium text-metallic-gold hover:text-stark-white transition-colors duration-200 tracking-wide">
         See how your team scores across all six conditions →
       </a>
-    </div>
-  </div>
-</section>
-
-<!-- ─── TRUST BAR ─────────────────────────────────────────────────── -->
-<section class="bg-deep-navy py-16 border-t border-metallic-gold/10">
-  <div class="max-w-container-max mx-auto px-gutter reveal">
-    <p class="font-label-caps text-[10px] text-stark-white/30 tracking-[0.3em] mb-8 text-center">TRUSTED BY LEADERS FROM</p>
-    <div class="flex flex-wrap justify-center items-center gap-x-14 gap-y-6">
-      <span class="font-display-lg text-[15px] tracking-[0.12em] text-stark-white/35 hover:text-stark-white/60 transition-colors cursor-default font-semibold">AMAZON</span>
-      <span class="w-px h-4 bg-stark-white/15 hidden md:block"></span>
-      <span class="font-display-lg text-[15px] tracking-[0.12em] text-stark-white/35 hover:text-stark-white/60 transition-colors cursor-default font-semibold">GOOGLE</span>
-      <span class="w-px h-4 bg-stark-white/15 hidden md:block"></span>
-      <span class="font-display-lg text-[15px] tracking-[0.12em] text-stark-white/35 hover:text-stark-white/60 transition-colors cursor-default font-semibold">PWC</span>
-      <span class="w-px h-4 bg-stark-white/15 hidden md:block"></span>
-      <span class="font-display-lg text-[15px] tracking-[0.12em] text-stark-white/35 hover:text-stark-white/60 transition-colors cursor-default font-semibold">AIRBNB</span>
-      <span class="w-px h-4 bg-stark-white/15 hidden md:block"></span>
-      <span class="font-display-lg text-[15px] tracking-[0.12em] text-stark-white/35 hover:text-stark-white/60 transition-colors cursor-default font-semibold">GOLDMAN SACHS</span>
     </div>
   </div>
 </section>
@@ -798,6 +802,45 @@
   }, { threshold: 0.3 });
   const statSection = document.querySelector('.stat-item')?.closest('div');
   if (statSection) statObserver.observe(statSection);
+
+  // Count-up animation for numeric stats
+  (function () {
+    var statsBar = document.getElementById('stats-bar');
+    if (!statsBar) return;
+
+    function showFinal() {
+      statsBar.querySelectorAll('[data-count]').forEach(function (el) {
+        var t = parseInt(el.getAttribute('data-count'), 10);
+        el.textContent = t >= 1000 ? t.toLocaleString() : t;
+      });
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      showFinal();
+      return;
+    }
+
+    var countObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        statsBar.querySelectorAll('[data-count]').forEach(function (el) {
+          var target = parseInt(el.getAttribute('data-count'), 10);
+          var dur = 1500;
+          var start = performance.now();
+          (function step(t) {
+            var p = Math.min(1, (t - start) / dur);
+            var eased = 1 - Math.pow(1 - p, 3);
+            var val = Math.round(target * eased);
+            el.textContent = target >= 1000 ? val.toLocaleString() : val;
+            if (p < 1) requestAnimationFrame(step);
+          })(start);
+        });
+        countObserver.unobserve(en.target);
+      });
+    }, { threshold: 0.25 });
+
+    countObserver.observe(statsBar);
+  })();
 </script>
 <script src="/booking-modal.js"></script>
 </body>
