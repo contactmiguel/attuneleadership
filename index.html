@@ -117,6 +117,31 @@
     .stat-item { animation: none; opacity: 1; }
   }
 
+  /* ATTUNE glyph icons */
+  @keyframes glyphDraw { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+  @keyframes glyphPop  { 0% { opacity:0; transform:scale(.2); } 70% { opacity:1; transform:scale(1.18); } 100% { opacity:1; transform:scale(1); } }
+
+  .glyph line, .glyph circle.stroke, .glyph polyline {
+    fill: none; stroke: #C2A36B; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 100; stroke-dashoffset: 100;
+    animation: glyphDraw .95s ease forwards;
+    animation-play-state: paused;
+  }
+  .glyph .dot, .glyph .fill {
+    fill: #C2A36B; opacity: 0; transform-box: fill-box; transform-origin: center;
+    animation: glyphPop .5s cubic-bezier(.2,.8,.3,1.4) forwards;
+    animation-play-state: paused;
+  }
+  .glyph.glyph-animate line,
+  .glyph.glyph-animate circle.stroke,
+  .glyph.glyph-animate polyline,
+  .glyph.glyph-animate .dot,
+  .glyph.glyph-animate .fill { animation-play-state: running; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .glyph * { animation: none !important; stroke-dashoffset: 0 !important; opacity: 1 !important; }
+  }
+
   /* Mega-menu dropdown */
   .mega-menu {
     opacity: 0;
@@ -270,6 +295,8 @@
       <span class="w-px h-4 bg-stark-white/15 hidden md:block"></span>
       <span class="font-display-lg text-[15px] tracking-[0.12em] text-stark-white/35 hover:text-stark-white/60 transition-colors cursor-default font-semibold">GOOGLE</span>
       <span class="w-px h-4 bg-stark-white/15 hidden md:block"></span>
+      <span class="font-display-lg text-[15px] tracking-[0.12em] text-stark-white/35 hover:text-stark-white/60 transition-colors cursor-default font-semibold">ACCENTURE</span>
+      <span class="w-px h-4 bg-stark-white/15 hidden md:block"></span>
       <span class="font-display-lg text-[15px] tracking-[0.12em] text-stark-white/35 hover:text-stark-white/60 transition-colors cursor-default font-semibold">PWC</span>
       <span class="w-px h-4 bg-stark-white/15 hidden md:block"></span>
       <span class="font-display-lg text-[15px] tracking-[0.12em] text-stark-white/35 hover:text-stark-white/60 transition-colors cursor-default font-semibold">AIRBNB</span>
@@ -357,15 +384,23 @@
     </div>
 
     <!-- Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-metallic-gold/10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-metallic-gold/10 framework-grid">
       <!-- A -->
-      <a href="framework.html" class="relative overflow-hidden bg-midnight-blue p-10 group cursor-pointer transition-all duration-300 hover:bg-[#0a1028] reveal" style="min-height:220px">
+      <a href="framework.html#alignment" class="relative overflow-hidden bg-midnight-blue p-10 group cursor-pointer transition-all duration-300 hover:bg-[#0a1028] reveal" style="min-height:220px">
         <div class="card-letter-bg">A</div>
         <div class="relative z-10 h-full flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class="font-label-caps text-[10px] text-metallic-gold/50 tracking-[0.3em]">01</span>
-              <span class="material-symbols-outlined text-metallic-gold/0 group-hover:text-metallic-gold/60 transition-all duration-300 text-sm translate-x-2 group-hover:translate-x-0">arrow_forward</span>
+              <div class="flex items-center gap-3">
+                <svg class="glyph" viewBox="0 0 100 100" width="44" height="44" fill="none">
+                  <line x1="16" y1="30" x2="72" y2="50" pathLength="100" style="animation-delay:0s"/>
+                  <line x1="16" y1="50" x2="72" y2="50" pathLength="100" style="animation-delay:.12s"/>
+                  <line x1="16" y1="70" x2="72" y2="50" pathLength="100" style="animation-delay:.24s"/>
+                  <circle class="dot" cx="76" cy="50" r="7" style="animation-delay:.72s"/>
+                </svg>
+                <span class="material-symbols-outlined text-metallic-gold/0 group-hover:text-metallic-gold/60 transition-all duration-300 text-sm translate-x-2 group-hover:translate-x-0">arrow_forward</span>
+              </div>
             </div>
             <div class="w-6 h-px bg-metallic-gold mb-5 group-hover:w-12 transition-all duration-300"></div>
             <h3 class="font-headline-sm text-headline-sm text-stark-white mb-4 group-hover:text-metallic-gold transition-colors duration-200">Alignment</h3>
@@ -374,13 +409,20 @@
         </div>
       </a>
       <!-- T (Trust) -->
-      <a href="framework.html" class="relative overflow-hidden bg-midnight-blue p-10 group cursor-pointer transition-all duration-300 hover:bg-[#0a1028] reveal reveal-delay-1" style="min-height:220px">
+      <a href="framework.html#trust" class="relative overflow-hidden bg-midnight-blue p-10 group cursor-pointer transition-all duration-300 hover:bg-[#0a1028] reveal reveal-delay-1" style="min-height:220px">
         <div class="card-letter-bg">T</div>
         <div class="relative z-10 h-full flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class="font-label-caps text-[10px] text-metallic-gold/50 tracking-[0.3em]">02</span>
-              <span class="material-symbols-outlined text-metallic-gold/0 group-hover:text-metallic-gold/60 transition-all duration-300 text-sm translate-x-2 group-hover:translate-x-0">arrow_forward</span>
+              <div class="flex items-center gap-3">
+                <svg class="glyph" viewBox="0 0 100 100" width="44" height="44" fill="none">
+                  <circle class="stroke" cx="40" cy="52" r="21" pathLength="100" style="animation-delay:0s"/>
+                  <circle class="stroke" cx="60" cy="52" r="21" pathLength="100" style="animation-delay:.18s"/>
+                  <circle class="dot" cx="50" cy="52" r="5" style="animation-delay:.74s"/>
+                </svg>
+                <span class="material-symbols-outlined text-metallic-gold/0 group-hover:text-metallic-gold/60 transition-all duration-300 text-sm translate-x-2 group-hover:translate-x-0">arrow_forward</span>
+              </div>
             </div>
             <div class="w-6 h-px bg-metallic-gold mb-5 group-hover:w-12 transition-all duration-300"></div>
             <h3 class="font-headline-sm text-headline-sm text-stark-white mb-4 group-hover:text-metallic-gold transition-colors duration-200">Trust</h3>
@@ -389,13 +431,23 @@
         </div>
       </a>
       <!-- T (Truth) -->
-      <a href="framework.html" class="relative overflow-hidden bg-midnight-blue p-10 group cursor-pointer transition-all duration-300 hover:bg-[#0a1028] reveal reveal-delay-2" style="min-height:220px">
+      <a href="framework.html#truth" class="relative overflow-hidden bg-midnight-blue p-10 group cursor-pointer transition-all duration-300 hover:bg-[#0a1028] reveal reveal-delay-2" style="min-height:220px">
         <div class="card-letter-bg">T</div>
         <div class="relative z-10 h-full flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class="font-label-caps text-[10px] text-metallic-gold/50 tracking-[0.3em]">03</span>
-              <span class="material-symbols-outlined text-metallic-gold/0 group-hover:text-metallic-gold/60 transition-all duration-300 text-sm translate-x-2 group-hover:translate-x-0">arrow_forward</span>
+              <div class="flex items-center gap-3">
+                <svg class="glyph" viewBox="0 0 100 100" width="44" height="44" fill="none">
+                  <line x1="16" y1="58" x2="84" y2="58" pathLength="100" style="animation-delay:0s"/>
+                  <line x1="50" y1="72" x2="50" y2="28" pathLength="100" style="animation-delay:.2s"/>
+                  <polyline points="41,38 50,27 59,38" pathLength="100" style="animation-delay:.42s"/>
+                  <circle class="dot" cx="50" cy="25" r="4" style="animation-delay:.78s"/>
+                  <line x1="30" y1="70" x2="38" y2="70" pathLength="100" style="stroke-width:2;opacity:.32;animation-delay:.5s"/>
+                  <line x1="62" y1="70" x2="70" y2="70" pathLength="100" style="stroke-width:2;opacity:.32;animation-delay:.58s"/>
+                </svg>
+                <span class="material-symbols-outlined text-metallic-gold/0 group-hover:text-metallic-gold/60 transition-all duration-300 text-sm translate-x-2 group-hover:translate-x-0">arrow_forward</span>
+              </div>
             </div>
             <div class="w-6 h-px bg-metallic-gold mb-5 group-hover:w-12 transition-all duration-300"></div>
             <h3 class="font-headline-sm text-headline-sm text-stark-white mb-4 group-hover:text-metallic-gold transition-colors duration-200">Truth</h3>
@@ -404,13 +456,21 @@
         </div>
       </a>
       <!-- U -->
-      <a href="framework.html" class="relative overflow-hidden bg-midnight-blue p-10 group cursor-pointer transition-all duration-300 hover:bg-[#0a1028] reveal" style="min-height:220px">
+      <a href="framework.html#understanding" class="relative overflow-hidden bg-midnight-blue p-10 group cursor-pointer transition-all duration-300 hover:bg-[#0a1028] reveal" style="min-height:220px">
         <div class="card-letter-bg">U</div>
         <div class="relative z-10 h-full flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class="font-label-caps text-[10px] text-metallic-gold/50 tracking-[0.3em]">04</span>
-              <span class="material-symbols-outlined text-metallic-gold/0 group-hover:text-metallic-gold/60 transition-all duration-300 text-sm translate-x-2 group-hover:translate-x-0">arrow_forward</span>
+              <div class="flex items-center gap-3">
+                <svg class="glyph" viewBox="0 0 100 100" width="44" height="44" fill="none">
+                  <circle class="stroke" cx="48" cy="50" r="31" pathLength="100" style="opacity:.4;animation-delay:0s"/>
+                  <circle class="stroke" cx="48" cy="50" r="21" pathLength="100" style="opacity:.7;animation-delay:.14s"/>
+                  <circle class="stroke" cx="48" cy="50" r="11" pathLength="100" style="animation-delay:.28s"/>
+                  <circle class="dot" cx="63" cy="61" r="5.5" style="animation-delay:.72s"/>
+                </svg>
+                <span class="material-symbols-outlined text-metallic-gold/0 group-hover:text-metallic-gold/60 transition-all duration-300 text-sm translate-x-2 group-hover:translate-x-0">arrow_forward</span>
+              </div>
             </div>
             <div class="w-6 h-px bg-metallic-gold mb-5 group-hover:w-12 transition-all duration-300"></div>
             <h3 class="font-headline-sm text-headline-sm text-stark-white mb-4 group-hover:text-metallic-gold transition-colors duration-200">Understanding</h3>
@@ -419,13 +479,23 @@
         </div>
       </a>
       <!-- N -->
-      <a href="framework.html" class="relative overflow-hidden bg-midnight-blue p-10 group cursor-pointer transition-all duration-300 hover:bg-[#0a1028] reveal reveal-delay-1" style="min-height:220px">
+      <a href="framework.html#navigation" class="relative overflow-hidden bg-midnight-blue p-10 group cursor-pointer transition-all duration-300 hover:bg-[#0a1028] reveal reveal-delay-1" style="min-height:220px">
         <div class="card-letter-bg">N</div>
         <div class="relative z-10 h-full flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class="font-label-caps text-[10px] text-metallic-gold/50 tracking-[0.3em]">05</span>
-              <span class="material-symbols-outlined text-metallic-gold/0 group-hover:text-metallic-gold/60 transition-all duration-300 text-sm translate-x-2 group-hover:translate-x-0">arrow_forward</span>
+              <div class="flex items-center gap-3">
+                <svg class="glyph" viewBox="0 0 100 100" width="44" height="44" fill="none">
+                  <polyline points="18,74 38,46 58,62 78,30" pathLength="100" style="animation-delay:0s"/>
+                  <circle class="dot" cx="18" cy="74" r="3.5" style="animation-delay:.55s"/>
+                  <circle class="dot" cx="38" cy="46" r="3.5" style="animation-delay:.68s"/>
+                  <circle class="dot" cx="58" cy="62" r="3.5" style="animation-delay:.8s"/>
+                  <circle class="stroke" cx="78" cy="30" r="8" pathLength="100" style="animation-delay:.5s"/>
+                  <circle class="dot" cx="78" cy="30" r="3.5" style="animation-delay:.92s"/>
+                </svg>
+                <span class="material-symbols-outlined text-metallic-gold/0 group-hover:text-metallic-gold/60 transition-all duration-300 text-sm translate-x-2 group-hover:translate-x-0">arrow_forward</span>
+              </div>
             </div>
             <div class="w-6 h-px bg-metallic-gold mb-5 group-hover:w-12 transition-all duration-300"></div>
             <h3 class="font-headline-sm text-headline-sm text-stark-white mb-4 group-hover:text-metallic-gold transition-colors duration-200">Navigation</h3>
@@ -434,13 +504,21 @@
         </div>
       </a>
       <!-- E -->
-      <a href="framework.html" class="relative overflow-hidden bg-midnight-blue p-10 group cursor-pointer transition-all duration-300 hover:bg-[#0a1028] reveal reveal-delay-2" style="min-height:220px">
+      <a href="framework.html#execution" class="relative overflow-hidden bg-midnight-blue p-10 group cursor-pointer transition-all duration-300 hover:bg-[#0a1028] reveal reveal-delay-2" style="min-height:220px">
         <div class="card-letter-bg">E</div>
         <div class="relative z-10 h-full flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-6">
               <span class="font-label-caps text-[10px] text-metallic-gold/50 tracking-[0.3em]">06</span>
-              <span class="material-symbols-outlined text-metallic-gold/0 group-hover:text-metallic-gold/60 transition-all duration-300 text-sm translate-x-2 group-hover:translate-x-0">arrow_forward</span>
+              <div class="flex items-center gap-3">
+                <svg class="glyph" viewBox="0 0 100 100" width="44" height="44" fill="none">
+                  <circle class="dot" cx="22" cy="50" r="4" style="animation-delay:.1s"/>
+                  <line x1="28" y1="50" x2="58" y2="50" pathLength="100" style="animation-delay:.12s"/>
+                  <polyline points="50,42 58,50 50,58" pathLength="100" style="animation-delay:.34s"/>
+                  <rect class="fill" x="64" y="42" width="16" height="16" rx="2" style="animation-delay:.52s"/>
+                </svg>
+                <span class="material-symbols-outlined text-metallic-gold/0 group-hover:text-metallic-gold/60 transition-all duration-300 text-sm translate-x-2 group-hover:translate-x-0">arrow_forward</span>
+              </div>
             </div>
             <div class="w-6 h-px bg-metallic-gold mb-5 group-hover:w-12 transition-all duration-300"></div>
             <h3 class="font-headline-sm text-headline-sm text-stark-white mb-4 group-hover:text-metallic-gold transition-colors duration-200">Execution</h3>
@@ -841,6 +919,21 @@
 
     countObserver.observe(statsBar);
   })();
+
+  // ATTUNE glyph draw-on animation — fires once when grid enters view
+  (function () {
+    var glyphGrid = document.querySelector('.framework-grid');
+    if (!glyphGrid) return;
+    var glyphObserver = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        glyphGrid.querySelectorAll('.glyph').forEach(function (g) { g.classList.add('glyph-animate'); });
+        glyphObserver.disconnect();
+      }
+    }, { threshold: 0.2 });
+    glyphObserver.observe(glyphGrid);
+  })();
+
+
 </script>
 <script src="/booking-modal.js"></script>
 </body>

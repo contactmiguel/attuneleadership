@@ -51,12 +51,54 @@
   .bg-grid-subtle { background-image: linear-gradient(to right, rgba(248, 225, 147, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(248, 225, 147, 0.03) 1px, transparent 1px); background-size: 80px 80px; }
   .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.8s ease, transform 0.8s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
+  html { scroll-behavior: smooth; }
+  .framework-grid > div { scroll-margin-top: 84px; }
 
   /* Download modal */
   .download-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 100; align-items: center; justify-content: center; }
   .download-modal-overlay.active { display: flex; }
   .download-modal-content { background: #0C1434; border: 1px solid rgba(248,225,147,0.6); padding: 48px; max-width: 500px; width: 90%; position: relative; }
   .download-modal-close { position: absolute; top: 20px; right: 20px; background: none; border: none; color: #F8E193; font-size: 28px; cursor: pointer; line-height: 1; }
+
+  /* ATTUNE glyph icons */
+  @keyframes glyphDraw { from { stroke-dashoffset: 100; } to { stroke-dashoffset: 0; } }
+  @keyframes glyphPop  { 0% { opacity:0; transform:scale(.2); } 70% { opacity:1; transform:scale(1.18); } 100% { opacity:1; transform:scale(1); } }
+
+  .glyph line, .glyph circle.stroke, .glyph polyline {
+    fill: none; stroke: #C2A36B; stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 100; stroke-dashoffset: 100;
+    animation: glyphDraw .95s ease forwards;
+    animation-play-state: paused;
+  }
+  .glyph .dot, .glyph .fill {
+    fill: #C2A36B; opacity: 0; transform-box: fill-box; transform-origin: center;
+    animation: glyphPop .5s cubic-bezier(.2,.8,.3,1.4) forwards;
+    animation-play-state: paused;
+  }
+  .glyph.glyph-animate line,
+  .glyph.glyph-animate circle.stroke,
+  .glyph.glyph-animate polyline,
+  .glyph.glyph-animate .dot,
+  .glyph.glyph-animate .fill { animation-play-state: running; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .glyph * { animation: none !important; stroke-dashoffset: 0 !important; opacity: 1 !important; }
+  }
+
+  /* Compact card ghost letter */
+  .card-letter-bg-sm {
+    position: absolute;
+    right: -4px;
+    bottom: -6px;
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 700;
+    font-style: italic;
+    color: rgba(248,225,147,0.042);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
 
   /* Mega-menu dropdown */
   .mega-menu {
@@ -176,12 +218,12 @@
 </nav>
 
 <!-- Hero -->
-<header class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+<header class="relative min-h-screen flex flex-col items-center overflow-hidden">
   <div class="absolute inset-0 bg-grid-subtle z-0"></div>
   <div class="absolute top-0 right-0 w-1/2 h-full opacity-30 pointer-events-none">
     <div class="w-full h-full bg-gradient-to-l from-metallic-gold/10 to-transparent"></div>
   </div>
-  <div class="relative z-10 max-w-container-max mx-auto px-gutter text-center">
+  <div class="relative z-10 max-w-container-max mx-auto px-gutter text-center flex-1 flex flex-col justify-center">
     <div class="md:max-w-3xl reveal mx-auto">
       <span class="font-label-caps text-label-caps text-metallic-gold mb-6 block tracking-[0.3em]">THE TEAM PERFORMANCE FRAMEWORK</span>
       <h1 class="font-display-lg text-display-lg md:text-[80px] leading-tight mb-stack-lg">
@@ -191,13 +233,89 @@
         "Teams don't fail at strategy. They fail at the human conditions that make strategy executable."
       </p>
       <p class="font-label-caps text-[11px] text-on-surface-variant tracking-[0.2em] mb-stack-lg">CLAUDIA BECK, MCC &nbsp;·&nbsp; BETTERTOGETHERGROUP, LLC</p>
-      <p class="font-body-lg text-body-lg text-on-surface-variant mx-auto mb-stack-lg">
-        Six measurable conditions of team performance:<br/><span class="whitespace-nowrap">Alignment &nbsp;·&nbsp; Trust &nbsp;·&nbsp; Truth &nbsp;·&nbsp; Understanding &nbsp;·&nbsp; Navigation &nbsp;·&nbsp; Execution</span>
-      </p>
+      <!-- Compact ATTUNE card strip — hero -->
+      <div class="hero-attune-strip mt-8 grid grid-cols-3 md:grid-cols-6 gap-px bg-metallic-gold/15 max-w-2xl mx-auto overflow-hidden">
+        <!-- A - Alignment -->
+        <div class="attune-mini-card relative overflow-hidden bg-midnight-blue px-3 py-6 flex flex-col items-center gap-2 cursor-pointer transition-colors duration-300 hover:bg-[#0a1028] group">
+          <div class="card-letter-bg-sm" aria-hidden="true">A</div>
+          <svg class="glyph relative z-10" viewBox="0 0 100 100" width="28" height="28" fill="none">
+            <line x1="16" y1="30" x2="72" y2="50" pathLength="100" style="animation-delay:0s"/>
+            <line x1="16" y1="50" x2="72" y2="50" pathLength="100" style="animation-delay:.12s"/>
+            <line x1="16" y1="70" x2="72" y2="50" pathLength="100" style="animation-delay:.24s"/>
+            <circle class="dot" cx="76" cy="50" r="7" style="animation-delay:.72s"/>
+          </svg>
+          <span class="relative z-10 font-display-lg text-[38px] text-metallic-gold leading-none group-hover:opacity-90 transition-opacity">A</span>
+          <span class="relative z-10 font-label-caps text-[7px] text-metallic-gold/60 tracking-[0.12em] text-center">ALIGNMENT</span>
+        </div>
+        <!-- T - Trust -->
+        <div class="attune-mini-card relative overflow-hidden bg-midnight-blue px-3 py-6 flex flex-col items-center gap-2 cursor-pointer transition-colors duration-300 hover:bg-[#0a1028] group">
+          <div class="card-letter-bg-sm" aria-hidden="true">T</div>
+          <svg class="glyph relative z-10" viewBox="0 0 100 100" width="28" height="28" fill="none">
+            <circle class="stroke" cx="40" cy="52" r="21" pathLength="100" style="animation-delay:0s"/>
+            <circle class="stroke" cx="60" cy="52" r="21" pathLength="100" style="animation-delay:.18s"/>
+            <circle class="dot" cx="50" cy="52" r="5" style="animation-delay:.74s"/>
+          </svg>
+          <span class="relative z-10 font-display-lg text-[38px] text-metallic-gold leading-none group-hover:opacity-90 transition-opacity">T</span>
+          <span class="relative z-10 font-label-caps text-[7px] text-metallic-gold/60 tracking-[0.12em] text-center">TRUST</span>
+        </div>
+        <!-- T - Truth -->
+        <div class="attune-mini-card relative overflow-hidden bg-midnight-blue px-3 py-6 flex flex-col items-center gap-2 cursor-pointer transition-colors duration-300 hover:bg-[#0a1028] group">
+          <div class="card-letter-bg-sm" aria-hidden="true">T</div>
+          <svg class="glyph relative z-10" viewBox="0 0 100 100" width="28" height="28" fill="none">
+            <line x1="16" y1="58" x2="84" y2="58" pathLength="100" style="animation-delay:0s"/>
+            <line x1="50" y1="72" x2="50" y2="28" pathLength="100" style="animation-delay:.2s"/>
+            <polyline points="41,38 50,27 59,38" pathLength="100" style="animation-delay:.42s"/>
+            <circle class="dot" cx="50" cy="25" r="4" style="animation-delay:.78s"/>
+            <line x1="30" y1="70" x2="38" y2="70" pathLength="100" style="stroke-width:2;opacity:.32;animation-delay:.5s"/>
+            <line x1="62" y1="70" x2="70" y2="70" pathLength="100" style="stroke-width:2;opacity:.32;animation-delay:.58s"/>
+          </svg>
+          <span class="relative z-10 font-display-lg text-[38px] text-metallic-gold leading-none group-hover:opacity-90 transition-opacity">T</span>
+          <span class="relative z-10 font-label-caps text-[7px] text-metallic-gold/60 tracking-[0.12em] text-center">TRUTH</span>
+        </div>
+        <!-- U - Understanding -->
+        <div class="attune-mini-card relative overflow-hidden bg-midnight-blue px-3 py-6 flex flex-col items-center gap-2 cursor-pointer transition-colors duration-300 hover:bg-[#0a1028] group">
+          <div class="card-letter-bg-sm" aria-hidden="true">U</div>
+          <svg class="glyph relative z-10" viewBox="0 0 100 100" width="28" height="28" fill="none">
+            <circle class="stroke" cx="48" cy="50" r="31" pathLength="100" style="opacity:.4;animation-delay:0s"/>
+            <circle class="stroke" cx="48" cy="50" r="21" pathLength="100" style="opacity:.7;animation-delay:.14s"/>
+            <circle class="stroke" cx="48" cy="50" r="11" pathLength="100" style="animation-delay:.28s"/>
+            <circle class="dot" cx="63" cy="61" r="5.5" style="animation-delay:.72s"/>
+          </svg>
+          <span class="relative z-10 font-display-lg text-[38px] text-metallic-gold leading-none group-hover:opacity-90 transition-opacity">U</span>
+          <span class="relative z-10 font-label-caps text-[7px] text-metallic-gold/60 tracking-[0.08em] text-center">UNDERSTANDING</span>
+        </div>
+        <!-- N - Navigation -->
+        <div class="attune-mini-card relative overflow-hidden bg-midnight-blue px-3 py-6 flex flex-col items-center gap-2 cursor-pointer transition-colors duration-300 hover:bg-[#0a1028] group">
+          <div class="card-letter-bg-sm" aria-hidden="true">N</div>
+          <svg class="glyph relative z-10" viewBox="0 0 100 100" width="28" height="28" fill="none">
+            <polyline points="18,74 38,46 58,62 78,30" pathLength="100" style="animation-delay:0s"/>
+            <circle class="dot" cx="18" cy="74" r="3.5" style="animation-delay:.55s"/>
+            <circle class="dot" cx="38" cy="46" r="3.5" style="animation-delay:.68s"/>
+            <circle class="dot" cx="58" cy="62" r="3.5" style="animation-delay:.8s"/>
+            <circle class="stroke" cx="78" cy="30" r="8" pathLength="100" style="animation-delay:.5s"/>
+            <circle class="dot" cx="78" cy="30" r="3.5" style="animation-delay:.92s"/>
+          </svg>
+          <span class="relative z-10 font-display-lg text-[38px] text-metallic-gold leading-none group-hover:opacity-90 transition-opacity">N</span>
+          <span class="relative z-10 font-label-caps text-[7px] text-metallic-gold/60 tracking-[0.1em] text-center">NAVIGATION</span>
+        </div>
+        <!-- E - Execution -->
+        <div class="attune-mini-card relative overflow-hidden bg-midnight-blue px-3 py-6 flex flex-col items-center gap-2 cursor-pointer transition-colors duration-300 hover:bg-[#0a1028] group">
+          <div class="card-letter-bg-sm" aria-hidden="true">E</div>
+          <svg class="glyph relative z-10" viewBox="0 0 100 100" width="28" height="28" fill="none">
+            <circle class="dot" cx="22" cy="50" r="4" style="animation-delay:.1s"/>
+            <line x1="28" y1="50" x2="58" y2="50" pathLength="100" style="animation-delay:.12s"/>
+            <polyline points="50,42 58,50 50,58" pathLength="100" style="animation-delay:.34s"/>
+            <rect class="fill" x="64" y="42" width="16" height="16" rx="2" style="animation-delay:.52s"/>
+          </svg>
+          <span class="relative z-10 font-display-lg text-[38px] text-metallic-gold leading-none group-hover:opacity-90 transition-opacity">E</span>
+          <span class="relative z-10 font-label-caps text-[7px] text-metallic-gold/60 tracking-[0.12em] text-center">EXECUTION</span>
+        </div>
+      </div>
+      <p class="font-label-caps text-[9px] text-metallic-gold/35 tracking-[0.3em] text-center mt-4 mb-12">SIX MEASURABLE CONDITIONS OF TEAM PERFORMANCE &nbsp;·&nbsp; SELECT A LETTER TO EXPLORE</p>
     </div>
   </div>
   <!-- Scroll indicator -->
-  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40 z-20">
+  <div class="flex flex-col items-center gap-2 opacity-40 z-20 pb-10">
     <span class="font-label-caps text-[10px] text-metallic-gold tracking-[0.3em]">SCROLL TO EXPLORE</span>
     <div class="w-px h-12 bg-metallic-gold animate-pulse"></div>
   </div>
@@ -206,19 +324,48 @@
 <!-- Main Framework Section -->
 <section class="py-section-padding-vertical bg-midnight-blue">
   <div class="max-w-container-max mx-auto px-gutter">
-    <div class="mb-24 flex flex-col md:flex-row justify-between items-end gap-stack-lg reveal">
-      <div class="max-w-xl">
-        <h2 class="font-headline-md text-headline-md text-metallic-gold mb-stack-md">Precision Dynamics</h2>
-        <p class="font-body-md text-body-md text-on-surface-variant">Each dimension operates on a spectrum: Strength (consistent and reliable under pressure), Developing (present but not yet reliable), or Growth Edge (the place where pressure creates the most cost).</p>
-      </div>
-      <div class="text-right hidden md:block">
-        <span class="font-display-lg text-display-lg text-metallic-gold/10">01 — 06</span>
+    <div class="mb-24 reveal">
+      <div class="flex flex-col md:flex-row gap-12 lg:gap-20 items-start">
+        <!-- Left: label + headline + body -->
+        <div class="md:w-5/12">
+          <p class="font-label-caps text-[10px] text-metallic-gold/60 tracking-[0.3em] mb-4">PRECISION DYNAMICS</p>
+          <h2 class="font-headline-md text-headline-md text-stark-white mb-stack-md">Each dimension operates <em class="text-metallic-gold not-italic" style="font-style:italic;">on a spectrum.</em></h2>
+          <p class="font-body-md text-body-md text-on-surface-variant">Each dimension is read where it actually sits under pressure; that read is where the work begins.</p>
+        </div>
+        <!-- Right: gradient bar + three columns -->
+        <div class="md:w-7/12 pt-8 md:pt-10">
+          <!-- Spectrum gradient bar -->
+          <div class="h-2 w-full rounded-full mb-8" style="background: linear-gradient(to right, #4a4035, #8a6d3b, #c9a84c);"></div>
+          <!-- Three spectrum stages -->
+          <div class="grid grid-cols-3 gap-6">
+            <div>
+              <p class="font-label-caps text-[10px] text-metallic-gold/60 tracking-[0.3em] mb-2">GROWTH EDGE</p>
+              <p class="font-body-md text-body-md text-on-surface-variant">Where pressure creates the most cost.</p>
+            </div>
+            <div>
+              <p class="font-label-caps text-[10px] text-metallic-gold/60 tracking-[0.3em] mb-2">DEVELOPING</p>
+              <p class="font-body-md text-body-md text-on-surface-variant">Present, but not yet reliable.</p>
+            </div>
+            <div>
+              <p class="font-label-caps text-[10px] text-metallic-gold/60 tracking-[0.3em] mb-2">STRENGTH</p>
+              <p class="font-body-md text-body-md text-on-surface-variant">Consistent and reliable under pressure.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-l border-t border-metallic-gold/20">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 border-l border-t border-metallic-gold/20 framework-grid">
       <div class="border-r border-b border-metallic-gold/20 p-stack-lg min-h-[400px] flex flex-col justify-between hover:bg-deep-navy/50 transition-colors group reveal">
         <div>
-          <span class="font-display-lg text-[64px] text-metallic-gold mb-2 block leading-none">A</span>
+          <div class="flex items-start justify-between mb-2">
+            <span class="font-display-lg text-[64px] text-metallic-gold leading-none">A</span>
+            <svg class="glyph mt-2" viewBox="0 0 100 100" width="44" height="44" fill="none">
+              <line x1="16" y1="30" x2="72" y2="50" pathLength="100" style="animation-delay:0s"/>
+              <line x1="16" y1="50" x2="72" y2="50" pathLength="100" style="animation-delay:.12s"/>
+              <line x1="16" y1="70" x2="72" y2="50" pathLength="100" style="animation-delay:.24s"/>
+              <circle class="dot" cx="76" cy="50" r="7" style="animation-delay:.72s"/>
+            </svg>
+          </div>
           <h3 class="font-headline-sm text-headline-sm text-stark-white mb-stack-sm group-hover:text-metallic-gold transition-colors">Alignment</h3>
           <p class="font-label-caps text-[10px] text-metallic-gold/60 tracking-[0.3em] mt-4 mb-2">DIAGNOSTIC</p>
           <p class="font-quote text-quote italic text-metallic-gold/80 mb-6">"Does this team share a clear picture of where we are going — and why now?"</p>
@@ -230,7 +377,14 @@
       </div>
       <div class="border-r border-b border-metallic-gold/20 p-stack-lg min-h-[400px] flex flex-col justify-between hover:bg-deep-navy/50 transition-colors group reveal">
         <div>
-          <span class="font-display-lg text-[64px] text-metallic-gold mb-2 block leading-none">T</span>
+          <div class="flex items-start justify-between mb-2">
+            <span class="font-display-lg text-[64px] text-metallic-gold leading-none">T</span>
+            <svg class="glyph mt-2" viewBox="0 0 100 100" width="44" height="44" fill="none">
+              <circle class="stroke" cx="40" cy="52" r="21" pathLength="100" style="animation-delay:0s"/>
+              <circle class="stroke" cx="60" cy="52" r="21" pathLength="100" style="animation-delay:.18s"/>
+              <circle class="dot" cx="50" cy="52" r="5" style="animation-delay:.74s"/>
+            </svg>
+          </div>
           <h3 class="font-headline-sm text-headline-sm text-stark-white mb-stack-sm group-hover:text-metallic-gold transition-colors">Trust</h3>
           <p class="font-label-caps text-[10px] text-metallic-gold/60 tracking-[0.3em] mt-4 mb-2">DIAGNOSTIC</p>
           <p class="font-quote text-quote italic text-metallic-gold/80 mb-6">"Can people on this team say the hard thing without managing the reaction first?"</p>
@@ -242,7 +396,17 @@
       </div>
       <div class="border-r border-b border-metallic-gold/20 p-stack-lg min-h-[400px] flex flex-col justify-between hover:bg-deep-navy/50 transition-colors group reveal">
         <div>
-          <span class="font-display-lg text-[64px] text-metallic-gold mb-2 block leading-none">T</span>
+          <div class="flex items-start justify-between mb-2">
+            <span class="font-display-lg text-[64px] text-metallic-gold leading-none">T</span>
+            <svg class="glyph mt-2" viewBox="0 0 100 100" width="44" height="44" fill="none">
+              <line x1="16" y1="58" x2="84" y2="58" pathLength="100" style="animation-delay:0s"/>
+              <line x1="50" y1="72" x2="50" y2="28" pathLength="100" style="animation-delay:.2s"/>
+              <polyline points="41,38 50,27 59,38" pathLength="100" style="animation-delay:.42s"/>
+              <circle class="dot" cx="50" cy="25" r="4" style="animation-delay:.78s"/>
+              <line x1="30" y1="70" x2="38" y2="70" pathLength="100" style="stroke-width:2;opacity:.32;animation-delay:.5s"/>
+              <line x1="62" y1="70" x2="70" y2="70" pathLength="100" style="stroke-width:2;opacity:.32;animation-delay:.58s"/>
+            </svg>
+          </div>
           <h3 class="font-headline-sm text-headline-sm text-stark-white mb-stack-sm group-hover:text-metallic-gold transition-colors">Truth</h3>
           <p class="font-label-caps text-[10px] text-metallic-gold/60 tracking-[0.3em] mt-4 mb-2">DIAGNOSTIC</p>
           <p class="font-quote text-quote italic text-metallic-gold/80 mb-6">"What does this team know but is not yet saying?"</p>
@@ -254,7 +418,15 @@
       </div>
       <div class="border-r border-b border-metallic-gold/20 p-stack-lg min-h-[400px] flex flex-col justify-between hover:bg-deep-navy/50 transition-colors group reveal">
         <div>
-          <span class="font-display-lg text-[64px] text-metallic-gold mb-2 block leading-none">U</span>
+          <div class="flex items-start justify-between mb-2">
+            <span class="font-display-lg text-[64px] text-metallic-gold leading-none">U</span>
+            <svg class="glyph mt-2" viewBox="0 0 100 100" width="44" height="44" fill="none">
+              <circle class="stroke" cx="48" cy="50" r="31" pathLength="100" style="opacity:.4;animation-delay:0s"/>
+              <circle class="stroke" cx="48" cy="50" r="21" pathLength="100" style="opacity:.7;animation-delay:.14s"/>
+              <circle class="stroke" cx="48" cy="50" r="11" pathLength="100" style="animation-delay:.28s"/>
+              <circle class="dot" cx="63" cy="61" r="5.5" style="animation-delay:.72s"/>
+            </svg>
+          </div>
           <h3 class="font-headline-sm text-headline-sm text-stark-white mb-stack-sm group-hover:text-metallic-gold transition-colors">Understanding</h3>
           <p class="font-label-caps text-[10px] text-metallic-gold/60 tracking-[0.3em] mt-4 mb-2">DIAGNOSTIC</p>
           <p class="font-quote text-quote italic text-metallic-gold/80 mb-6">"What is driving the friction underneath what is being said?"</p>
@@ -266,7 +438,17 @@
       </div>
       <div class="border-r border-b border-metallic-gold/20 p-stack-lg min-h-[400px] flex flex-col justify-between hover:bg-deep-navy/50 transition-colors group reveal">
         <div>
-          <span class="font-display-lg text-[64px] text-metallic-gold mb-2 block leading-none">N</span>
+          <div class="flex items-start justify-between mb-2">
+            <span class="font-display-lg text-[64px] text-metallic-gold leading-none">N</span>
+            <svg class="glyph mt-2" viewBox="0 0 100 100" width="44" height="44" fill="none">
+              <polyline points="18,74 38,46 58,62 78,30" pathLength="100" style="animation-delay:0s"/>
+              <circle class="dot" cx="18" cy="74" r="3.5" style="animation-delay:.55s"/>
+              <circle class="dot" cx="38" cy="46" r="3.5" style="animation-delay:.68s"/>
+              <circle class="dot" cx="58" cy="62" r="3.5" style="animation-delay:.8s"/>
+              <circle class="stroke" cx="78" cy="30" r="8" pathLength="100" style="animation-delay:.5s"/>
+              <circle class="dot" cx="78" cy="30" r="3.5" style="animation-delay:.92s"/>
+            </svg>
+          </div>
           <h3 class="font-headline-sm text-headline-sm text-stark-white mb-stack-sm group-hover:text-metallic-gold transition-colors">Navigation</h3>
           <p class="font-label-caps text-[10px] text-metallic-gold/60 tracking-[0.3em] mt-4 mb-2">DIAGNOSTIC</p>
           <p class="font-quote text-quote italic text-metallic-gold/80 mb-6">"How does this team move through tension to a decision everyone holds?"</p>
@@ -278,7 +460,15 @@
       </div>
       <div class="border-r border-b border-metallic-gold/20 p-stack-lg min-h-[400px] flex flex-col justify-between hover:bg-deep-navy/50 transition-colors group reveal">
         <div>
-          <span class="font-display-lg text-[64px] text-metallic-gold mb-2 block leading-none">E</span>
+          <div class="flex items-start justify-between mb-2">
+            <span class="font-display-lg text-[64px] text-metallic-gold leading-none">E</span>
+            <svg class="glyph mt-2" viewBox="0 0 100 100" width="44" height="44" fill="none">
+              <circle class="dot" cx="22" cy="50" r="4" style="animation-delay:.1s"/>
+              <line x1="28" y1="50" x2="58" y2="50" pathLength="100" style="animation-delay:.12s"/>
+              <polyline points="50,42 58,50 50,58" pathLength="100" style="animation-delay:.34s"/>
+              <rect class="fill" x="64" y="42" width="16" height="16" rx="2" style="animation-delay:.52s"/>
+            </svg>
+          </div>
           <h3 class="font-headline-sm text-headline-sm text-stark-white mb-stack-sm group-hover:text-metallic-gold transition-colors">Execution</h3>
           <p class="font-label-caps text-[10px] text-metallic-gold/60 tracking-[0.3em] mt-4 mb-2">DIAGNOSTIC</p>
           <p class="font-quote text-quote italic text-metallic-gold/80 mb-6">"Does what was decided in the room still hold on Friday?"</p>
@@ -371,6 +561,90 @@
   </div>
 </section>
 
+<!-- ATTUNE Summary Strip -->
+<section class="py-16 bg-deep-navy border-t border-metallic-gold/10">
+  <div class="max-w-4xl mx-auto px-gutter">
+    <div class="attune-summary-strip grid grid-cols-3 md:grid-cols-6 gap-px bg-metallic-gold/15">
+      <!-- A - Alignment -->
+      <div class="attune-mini-card relative overflow-hidden bg-midnight-blue px-3 py-7 flex flex-col items-center gap-3 cursor-pointer transition-colors duration-300 hover:bg-[#0a1028] group">
+        <div class="card-letter-bg-sm" aria-hidden="true">A</div>
+        <svg class="glyph relative z-10" viewBox="0 0 100 100" width="30" height="30" fill="none">
+          <line x1="16" y1="30" x2="72" y2="50" pathLength="100" style="animation-delay:0s"/>
+          <line x1="16" y1="50" x2="72" y2="50" pathLength="100" style="animation-delay:.12s"/>
+          <line x1="16" y1="70" x2="72" y2="50" pathLength="100" style="animation-delay:.24s"/>
+          <circle class="dot" cx="76" cy="50" r="7" style="animation-delay:.72s"/>
+        </svg>
+        <span class="relative z-10 font-display-lg text-[44px] text-metallic-gold leading-none group-hover:opacity-90 transition-opacity">A</span>
+        <span class="relative z-10 font-label-caps text-[7px] text-metallic-gold/60 tracking-[0.12em] text-center">ALIGNMENT</span>
+      </div>
+      <!-- T - Trust -->
+      <div class="attune-mini-card relative overflow-hidden bg-midnight-blue px-3 py-7 flex flex-col items-center gap-3 cursor-pointer transition-colors duration-300 hover:bg-[#0a1028] group">
+        <div class="card-letter-bg-sm" aria-hidden="true">T</div>
+        <svg class="glyph relative z-10" viewBox="0 0 100 100" width="30" height="30" fill="none">
+          <circle class="stroke" cx="40" cy="52" r="21" pathLength="100" style="animation-delay:0s"/>
+          <circle class="stroke" cx="60" cy="52" r="21" pathLength="100" style="animation-delay:.18s"/>
+          <circle class="dot" cx="50" cy="52" r="5" style="animation-delay:.74s"/>
+        </svg>
+        <span class="relative z-10 font-display-lg text-[44px] text-metallic-gold leading-none group-hover:opacity-90 transition-opacity">T</span>
+        <span class="relative z-10 font-label-caps text-[7px] text-metallic-gold/60 tracking-[0.12em] text-center">TRUST</span>
+      </div>
+      <!-- T - Truth -->
+      <div class="attune-mini-card relative overflow-hidden bg-midnight-blue px-3 py-7 flex flex-col items-center gap-3 cursor-pointer transition-colors duration-300 hover:bg-[#0a1028] group">
+        <div class="card-letter-bg-sm" aria-hidden="true">T</div>
+        <svg class="glyph relative z-10" viewBox="0 0 100 100" width="30" height="30" fill="none">
+          <line x1="16" y1="58" x2="84" y2="58" pathLength="100" style="animation-delay:0s"/>
+          <line x1="50" y1="72" x2="50" y2="28" pathLength="100" style="animation-delay:.2s"/>
+          <polyline points="41,38 50,27 59,38" pathLength="100" style="animation-delay:.42s"/>
+          <circle class="dot" cx="50" cy="25" r="4" style="animation-delay:.78s"/>
+          <line x1="30" y1="70" x2="38" y2="70" pathLength="100" style="stroke-width:2;opacity:.32;animation-delay:.5s"/>
+          <line x1="62" y1="70" x2="70" y2="70" pathLength="100" style="stroke-width:2;opacity:.32;animation-delay:.58s"/>
+        </svg>
+        <span class="relative z-10 font-display-lg text-[44px] text-metallic-gold leading-none group-hover:opacity-90 transition-opacity">T</span>
+        <span class="relative z-10 font-label-caps text-[7px] text-metallic-gold/60 tracking-[0.12em] text-center">TRUTH</span>
+      </div>
+      <!-- U - Understanding -->
+      <div class="attune-mini-card relative overflow-hidden bg-midnight-blue px-3 py-7 flex flex-col items-center gap-3 cursor-pointer transition-colors duration-300 hover:bg-[#0a1028] group">
+        <div class="card-letter-bg-sm" aria-hidden="true">U</div>
+        <svg class="glyph relative z-10" viewBox="0 0 100 100" width="30" height="30" fill="none">
+          <circle class="stroke" cx="48" cy="50" r="31" pathLength="100" style="opacity:.4;animation-delay:0s"/>
+          <circle class="stroke" cx="48" cy="50" r="21" pathLength="100" style="opacity:.7;animation-delay:.14s"/>
+          <circle class="stroke" cx="48" cy="50" r="11" pathLength="100" style="animation-delay:.28s"/>
+          <circle class="dot" cx="63" cy="61" r="5.5" style="animation-delay:.72s"/>
+        </svg>
+        <span class="relative z-10 font-display-lg text-[44px] text-metallic-gold leading-none group-hover:opacity-90 transition-opacity">U</span>
+        <span class="relative z-10 font-label-caps text-[7px] text-metallic-gold/60 tracking-[0.08em] text-center">UNDERSTANDING</span>
+      </div>
+      <!-- N - Navigation -->
+      <div class="attune-mini-card relative overflow-hidden bg-midnight-blue px-3 py-7 flex flex-col items-center gap-3 cursor-pointer transition-colors duration-300 hover:bg-[#0a1028] group">
+        <div class="card-letter-bg-sm" aria-hidden="true">N</div>
+        <svg class="glyph relative z-10" viewBox="0 0 100 100" width="30" height="30" fill="none">
+          <polyline points="18,74 38,46 58,62 78,30" pathLength="100" style="animation-delay:0s"/>
+          <circle class="dot" cx="18" cy="74" r="3.5" style="animation-delay:.55s"/>
+          <circle class="dot" cx="38" cy="46" r="3.5" style="animation-delay:.68s"/>
+          <circle class="dot" cx="58" cy="62" r="3.5" style="animation-delay:.8s"/>
+          <circle class="stroke" cx="78" cy="30" r="8" pathLength="100" style="animation-delay:.5s"/>
+          <circle class="dot" cx="78" cy="30" r="3.5" style="animation-delay:.92s"/>
+        </svg>
+        <span class="relative z-10 font-display-lg text-[44px] text-metallic-gold leading-none group-hover:opacity-90 transition-opacity">N</span>
+        <span class="relative z-10 font-label-caps text-[7px] text-metallic-gold/60 tracking-[0.1em] text-center">NAVIGATION</span>
+      </div>
+      <!-- E - Execution -->
+      <div class="attune-mini-card relative overflow-hidden bg-midnight-blue px-3 py-7 flex flex-col items-center gap-3 cursor-pointer transition-colors duration-300 hover:bg-[#0a1028] group">
+        <div class="card-letter-bg-sm" aria-hidden="true">E</div>
+        <svg class="glyph relative z-10" viewBox="0 0 100 100" width="30" height="30" fill="none">
+          <circle class="dot" cx="22" cy="50" r="4" style="animation-delay:.1s"/>
+          <line x1="28" y1="50" x2="58" y2="50" pathLength="100" style="animation-delay:.12s"/>
+          <polyline points="50,42 58,50 50,58" pathLength="100" style="animation-delay:.34s"/>
+          <rect class="fill" x="64" y="42" width="16" height="16" rx="2" style="animation-delay:.52s"/>
+        </svg>
+        <span class="relative z-10 font-display-lg text-[44px] text-metallic-gold leading-none group-hover:opacity-90 transition-opacity">E</span>
+        <span class="relative z-10 font-label-caps text-[7px] text-metallic-gold/60 tracking-[0.12em] text-center">EXECUTION</span>
+      </div>
+    </div>
+    <p class="font-label-caps text-[9px] text-metallic-gold/30 tracking-[0.35em] text-center mt-6">A.T.T.U.N.E. &mdash; SIX MEASURABLE CONDITIONS OF TEAM PERFORMANCE</p>
+  </div>
+</section>
+
 <!-- CTA -->
 <!-- Assessment CTA Section -->
 <section class="py-20 bg-midnight-blue/50">
@@ -439,6 +713,69 @@
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // ATTUNE glyph draw-on animation — fires once when grid enters view
+  (function () {
+    var glyphGrid = document.querySelector('.framework-grid');
+    if (!glyphGrid) return;
+    var glyphObserver = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        glyphGrid.querySelectorAll('.glyph').forEach(function (g) { g.classList.add('glyph-animate'); });
+        glyphObserver.disconnect();
+      }
+    }, { threshold: 0.2 });
+    glyphObserver.observe(glyphGrid);
+  })();
+
+  // Hero strip glyph animation — fires on load after reveal
+  setTimeout(function () {
+    document.querySelectorAll('.hero-attune-strip .glyph').forEach(function (g) { g.classList.add('glyph-animate'); });
+  }, 900);
+
+  // Summary strip glyph animation — fires on scroll
+  (function () {
+    var strip = document.querySelector('.attune-summary-strip');
+    if (!strip) return;
+    var stripObs = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        entries[0].target.querySelectorAll('.glyph').forEach(function (g) { g.classList.add('glyph-animate'); });
+        stripObs.disconnect();
+      }
+    }, { threshold: 0.3 });
+    stripObs.observe(strip);
+  })();
+
+  // Mini card hover: re-trigger glyph animation
+  document.querySelectorAll('.attune-mini-card').forEach(function (card) {
+    card.addEventListener('mouseenter', function () {
+      card.querySelectorAll('.glyph').forEach(function (g) {
+        var els = g.querySelectorAll('line, circle, polyline, rect');
+        els.forEach(function (el) { el.style.animation = 'none'; });
+        g.classList.remove('glyph-animate');
+        void g.offsetWidth;
+        els.forEach(function (el) { el.style.animation = ''; });
+        g.classList.add('glyph-animate');
+      });
+    });
+  });
+
+  // Assign IDs to framework grid cards and wire up hero/summary strip click-to-scroll
+  (function () {
+    var dims = ['alignment', 'trust', 'truth', 'understanding', 'navigation', 'execution'];
+    document.querySelectorAll('.framework-grid > div').forEach(function (card, i) {
+      if (dims[i]) card.id = dims[i];
+    });
+    function scrollToDim(i) {
+      var el = document.getElementById(dims[i]);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    document.querySelectorAll('.hero-attune-strip .attune-mini-card').forEach(function (card, i) {
+      card.addEventListener('click', function () { scrollToDim(i); });
+    });
+    document.querySelectorAll('.attune-summary-strip .attune-mini-card').forEach(function (card, i) {
+      card.addEventListener('click', function () { scrollToDim(i); });
+    });
+  })();
 
   // Mobile menu & For Teams accordion
   document.getElementById('mobile-menu-btn').addEventListener('click', () => {
